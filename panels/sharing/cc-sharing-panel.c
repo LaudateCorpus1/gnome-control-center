@@ -43,19 +43,12 @@ static GtkWidget *cc_sharing_panel_new_media_sharing_row (const char     *uri_or
 
 #define FILE_SHARING_SCHEMA_ID "org.gnome.desktop.file-sharing"
 #define GNOME_REMOTE_DESKTOP_SCHEMA_ID "org.gnome.desktop.remote-desktop"
-#define GNOME_REMOTE_DESKTOP_VNC_SCHEMA_ID "org.gnome.desktop.remote-desktop.vnc"
-
-typedef enum
-{
-  GRD_VNC_AUTH_METHOD_PROMPT,
-  GRD_VNC_AUTH_METHOD_PASSWORD
-} GrdVncAuthMethod;
+#define GNOME_REMOTE_DESKTOP_RDP_SCHEMA_ID "org.gnome.desktop.remote-desktop.rdp"
 
 struct _CcSharingPanel
 {
   CcPanel parent_instance;
 
-  GtkWidget *approve_connections_radiobutton;
   GtkWidget *hostname_entry;
   GtkWidget *main_list_box;
   GtkWidget *master_switch;
@@ -72,24 +65,22 @@ struct _CcSharingPanel
   GtkWidget *personal_file_sharing_require_password_switch;
   GtkWidget *personal_file_sharing_row;
   GtkWidget *personal_file_sharing_switch;
-  GtkWidget *password_grid;
-  GtkWidget *remote_control_box;
-  GtkWidget *remote_control_checkbutton;
-  GtkWidget *remote_control_password_entry;
   GtkWidget *remote_login_dialog;
   GtkWidget *remote_login_label;
   GtkWidget *remote_login_row;
   GtkWidget *remote_login_switch;
-  GtkWidget *require_password_radiobutton;
-  GtkWidget *screen_sharing_dialog;
-  GtkWidget *screen_sharing_grid;
-  GtkWidget *screen_sharing_headerbar;
-  GtkWidget *screen_sharing_label;
+
+  GtkWidget *remote_control_checkbutton;
+  GtkWidget *remote_control_password_entry;
+  GtkWidget *remote_control_username_entry;
+  GtkWidget *remote_desktop_dialog;
+  GtkWidget *remote_desktop_address_label;
   GtkWidget *screen_sharing_row;
-  GtkWidget *screen_sharing_switch;
+  GtkWidget *remote_desktop_switch;
+  GtkWidget *remote_desktop_fingerprint_dialog;
+
   GtkWidget *shared_folders_grid;
   GtkWidget *shared_folders_listbox;
-  GtkWidget *show_password_checkbutton;
 
   GDBusProxy *sharing_proxy;
 
@@ -112,7 +103,7 @@ cc_sharing_panel_master_switch_notify (CcSharingPanel *self)
       /* disable all services if the master switch is not active */
       OFF_IF_VISIBLE(self->media_sharing_row, self->media_sharing_switch);
       OFF_IF_VISIBLE(self->personal_file_sharing_row, self->personal_file_sharing_switch);
-      OFF_IF_VISIBLE(self->screen_sharing_row, self->screen_sharing_switch);
+      OFF_IF_VISIBLE(self->screen_sharing_row, self->remote_desktop_switch);
 
       gtk_switch_set_active (GTK_SWITCH (self->remote_login_switch), FALSE);
     }
@@ -147,10 +138,10 @@ cc_sharing_panel_dispose (GObject *object)
       self->remote_login_dialog = NULL;
     }
 
-  if (self->screen_sharing_dialog)
+  if (self->remote_desktop_dialog)
     {
-      gtk_window_destroy (GTK_WINDOW (self->screen_sharing_dialog));
-      self->screen_sharing_dialog = NULL;
+      gtk_window_destroy (GTK_WINDOW (self->remote_desktop_dialog));
+      self->remote_desktop_dialog = NULL;
     }
 
   g_clear_object (&self->sharing_proxy);
@@ -162,6 +153,21 @@ static const char *
 cc_sharing_panel_get_help_uri (CcPanel *panel)
 {
   return "help:gnome-help/prefs-sharing";
+}
+
+static void
+remote_control_credentials_changed (CcSharingPanel *self);
+
+static void
+remote_desktop_show_encryption_fingerprint (CcSharingPanel *self)
+{
+  gtk_window_present (GTK_WINDOW (self->remote_desktop_fingerprint_dialog));
+}
+
+static void
+remote_desktop_hide_encryption_fingerprint (CcSharingPanel *self)
+{
+  gtk_widget_hide (self->remote_desktop_fingerprint_dialog);
 }
 
 static void
@@ -177,9 +183,7 @@ cc_sharing_panel_class_init (CcSharingPanelClass *klass)
 
   gtk_widget_class_set_template_from_resource (widget_class, "/org/gnome/control-center/sharing/cc-sharing-panel.ui");
 
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, approve_connections_radiobutton);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, hostname_entry);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, screen_sharing_grid);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, shared_folders_grid);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, master_switch);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, main_list_box);
@@ -194,21 +198,23 @@ cc_sharing_panel_class_init (CcSharingPanelClass *klass)
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, personal_file_sharing_password_label);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, personal_file_sharing_require_password_switch);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, personal_file_sharing_row);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, password_grid);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_control_box);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_control_checkbutton);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_control_password_entry);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_login_dialog);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_login_label);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_login_row);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_login_switch);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, require_password_radiobutton);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, screen_sharing_dialog);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, screen_sharing_headerbar);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, screen_sharing_label);
+  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_desktop_dialog);
+  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_desktop_switch);
+  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_control_username_entry);
+  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_desktop_address_label);
+  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, remote_desktop_fingerprint_dialog);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, screen_sharing_row);
   gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, shared_folders_listbox);
-  gtk_widget_class_bind_template_child (widget_class, CcSharingPanel, show_password_checkbutton);
+
+  gtk_widget_class_bind_template_callback (widget_class, remote_control_credentials_changed);
+  gtk_widget_class_bind_template_callback (widget_class, remote_desktop_show_encryption_fingerprint);
+  gtk_widget_class_bind_template_callback (widget_class, remote_desktop_hide_encryption_fingerprint);
 
   g_type_ensure (CC_TYPE_LIST_ROW);
   g_type_ensure (CC_TYPE_HOSTNAME_ENTRY);
@@ -222,7 +228,7 @@ cc_sharing_panel_run_dialog (CcSharingPanel *self,
 
   /* ensure labels with the hostname are updated if the hostname has changed */
   cc_sharing_panel_setup_label_with_hostname (self,
-                                              self->screen_sharing_label);
+                                              self->remote_desktop_address_label);
   cc_sharing_panel_setup_label_with_hostname (self, self->remote_login_label);
   cc_sharing_panel_setup_label_with_hostname (self,
                                               self->personal_file_sharing_label);
@@ -247,7 +253,7 @@ cc_sharing_panel_main_list_box_row_activated (CcSharingPanel *self,
   else if (row == GTK_LIST_BOX_ROW (self->remote_login_row))
     dialog = self->remote_login_dialog;
   else if (row == GTK_LIST_BOX_ROW (self->screen_sharing_row))
-    dialog = self->screen_sharing_dialog;
+    dialog = self->remote_desktop_dialog;
   else
     return;
 
@@ -662,11 +668,9 @@ cc_sharing_panel_setup_label (CcSharingPanel *self,
       /* TRANSLATORS: %s is replaced with a link to a "ssh <hostname>" command to run */
       text = g_strdup_printf (_("When remote login is enabled, remote users can connect using the Secure Shell command:\n%s"), command);
     }
-  else if (label == self->screen_sharing_label)
+  else if (label == self->remote_desktop_address_label)
     {
-      g_autofree gchar *url = g_strdup_printf ("<a href=\"vnc://%s\">vnc://%s</a>", hostname, hostname);
-      /* TRANSLATORS: %s is replaced with a link to a vnc://<hostname> URL */
-      text = g_strdup_printf (_("Screen sharing allows remote users to view or control your screen by connecting to %s"), url);
+      text = g_strdup (hostname);
     }
   else
     g_assert_not_reached ();
@@ -890,28 +894,6 @@ cc_sharing_panel_check_schema_available (CcSharingPanel *self,
   return TRUE;
 }
 
-static void
-screen_sharing_show_cb (CcSharingPanel *self)
-{
-  gtk_check_button_set_active (GTK_CHECK_BUTTON (self->show_password_checkbutton),
-                               FALSE);
-}
-
-static void
-screen_sharing_hide_cb (CcSharingPanel *self)
-{
-  GtkCheckButton *ac_radio;
-  GtkEntry    *pw_entry;
-  const gchar *password;
-
-  ac_radio = GTK_CHECK_BUTTON (self->approve_connections_radiobutton);
-  pw_entry = GTK_ENTRY (self->remote_control_password_entry);
-  password = gtk_editable_get_text (GTK_EDITABLE (pw_entry));
-
-  if (password == NULL || *password == '\0')
-    gtk_check_button_set_active (ac_radio, TRUE);
-}
-
 #define MAX_PASSWORD_SIZE 8
 static void
 screen_sharing_password_insert_text_cb (CcSharingPanel *self,
@@ -944,97 +926,42 @@ screen_sharing_password_insert_text_cb (CcSharingPanel *self,
 #undef MAX_PASSWORD_SIZE
 
 static void
-on_vnc_password_entry_notify_text (CcSharingPanel *self)
+remote_control_credentials_changed (CcSharingPanel *self)
 {
-  const char *password = gtk_editable_get_text (GTK_EDITABLE (self->remote_control_password_entry));
-  cc_grd_store_vnc_password (password, cc_panel_get_cancellable (CC_PANEL (self)));
+  const gchar *username, *password;
+
+  username = gtk_editable_get_text (GTK_EDITABLE (self->remote_control_username_entry));
+  password = gtk_editable_get_text (GTK_EDITABLE (self->remote_control_password_entry));
+
+  if (username != NULL && password != NULL)
+    cc_grd_store_rdp_credentials (username, password, cc_panel_get_cancellable (CC_PANEL (self)));
 }
 
 static void
-cc_sharing_panel_setup_screen_sharing_dialog_gnome_remote_desktop (CcSharingPanel *self)
+cc_sharing_panel_setup_remote_desktop_dialog (CcSharingPanel *self)
 {
-  g_autofree gchar *password = NULL;
-  g_autoptr(GSettings) vnc_settings = NULL;
+  const gchar *username = NULL;
+  const gchar *password = NULL;
+  g_autoptr(GSettings) rdp_settings = NULL;
   GtkWidget *networks, *w;
 
-  cc_sharing_panel_bind_switch_to_widgets (self->require_password_radiobutton, self->password_grid, NULL);
+  cc_sharing_panel_setup_label_with_hostname (self, self->remote_desktop_address_label);
 
-  cc_sharing_panel_setup_label_with_hostname (self, self->screen_sharing_label);
+  rdp_settings = g_settings_new (GNOME_REMOTE_DESKTOP_RDP_SCHEMA_ID);
 
-  g_object_bind_property (self->show_password_checkbutton,
-                          "active",
-                          self->remote_control_password_entry,
-                          "visibility",
-                          G_BINDING_SYNC_CREATE);
-
-  /* make sure the password entry is hidden by default */
-  g_signal_connect_object (self->screen_sharing_dialog,
-                           "show",
-                           G_CALLBACK (screen_sharing_show_cb),
-                           self,
-                           G_CONNECT_SWAPPED);
-
-  g_signal_connect_object (self->screen_sharing_dialog,
-                           "hide",
-                           G_CALLBACK (screen_sharing_hide_cb),
-                           self,
-                           G_CONNECT_SWAPPED);
-
-  password = cc_grd_lookup_vnc_password (cc_panel_get_cancellable (CC_PANEL (self)));
-  if (password != NULL)
-    gtk_editable_set_text (GTK_EDITABLE (self->remote_control_password_entry), password);
-
-  /* accept at most 8 bytes in password entry */
-  g_signal_connect_object (self->remote_control_password_entry,
-                           "insert-text",
-                           G_CALLBACK (screen_sharing_password_insert_text_cb),
-                           self,
-                           G_CONNECT_SWAPPED);
-
-  /* Bind settings to widgets */
-  vnc_settings = g_settings_new (GNOME_REMOTE_DESKTOP_VNC_SCHEMA_ID);
-
-  g_settings_bind (vnc_settings,
+  g_settings_bind (rdp_settings,
                    "view-only",
                    self->remote_control_checkbutton,
                    "active",
-                   G_SETTINGS_BIND_DEFAULT | G_SETTINGS_BIND_INVERT_BOOLEAN);
+                   G_SETTINGS_BIND_DEFAULT);
 
-  g_settings_bind_with_mapping (vnc_settings,
-                                "auth-method",
-                                self->approve_connections_radiobutton,
-                                "active",
-                                G_SETTINGS_BIND_DEFAULT,
-                                cc_grd_get_is_auth_method_prompt,
-                                cc_grd_set_is_auth_method_prompt,
-                                NULL,
-                                NULL);
+  username = cc_grd_lookup_rdp_username (cc_panel_get_cancellable (CC_PANEL (self)));
+  if (username != NULL)
+    gtk_editable_set_text (GTK_EDITABLE (self->remote_control_username_entry), username);
 
-  g_settings_bind_with_mapping (vnc_settings,
-                                "auth-method",
-                                self->require_password_radiobutton,
-                                "active",
-                                G_SETTINGS_BIND_DEFAULT,
-                                cc_grd_get_is_auth_method_password,
-                                cc_grd_set_is_auth_method_password,
-                                NULL,
-                                NULL);
-
-  g_signal_connect_object (self->remote_control_password_entry,
-                           "notify::text",
-                           G_CALLBACK (on_vnc_password_entry_notify_text),
-                           self,
-                           G_CONNECT_SWAPPED);
-
-  networks = cc_sharing_networks_new (self->sharing_proxy, "gnome-remote-desktop");
-  gtk_box_append (GTK_BOX (self->remote_control_box), networks);
-
-  w = create_switch_with_bindings (GTK_SWITCH (g_object_get_data (G_OBJECT (networks), "switch")));
-  gtk_header_bar_pack_start (GTK_HEADER_BAR (self->screen_sharing_headerbar), w);
-  self->screen_sharing_switch = w;
-
-  cc_sharing_panel_bind_networks_to_label (self, networks,
-                                           self->screen_sharing_row);
+  password = cc_grd_lookup_rdp_password (cc_panel_get_cancellable (CC_PANEL (self)));
+  if (password != NULL)
+    gtk_editable_set_text (GTK_EDITABLE (self->remote_control_password_entry), password);
 }
 
 static void
@@ -1048,7 +975,7 @@ remote_desktop_name_appeared (GDBusConnection *connection,
   g_bus_unwatch_name (self->remote_desktop_name_watch);
   self->remote_desktop_name_watch = 0;
 
-  cc_sharing_panel_setup_screen_sharing_dialog_gnome_remote_desktop (self);
+  cc_sharing_panel_setup_remote_desktop_dialog (self);
   gtk_widget_show (self->screen_sharing_row);
 }
 
@@ -1058,7 +985,7 @@ check_remote_desktop_available (CcSharingPanel *self)
   if (!cc_sharing_panel_check_schema_available (self, GNOME_REMOTE_DESKTOP_SCHEMA_ID))
     return;
 
-  if (!cc_sharing_panel_check_schema_available (self, GNOME_REMOTE_DESKTOP_VNC_SCHEMA_ID))
+  if (!cc_sharing_panel_check_schema_available (self, GNOME_REMOTE_DESKTOP_RDP_SCHEMA_ID))
     return;
 
   self->remote_desktop_name_watch = g_bus_watch_name (G_BUS_TYPE_SESSION,
@@ -1122,7 +1049,7 @@ cc_sharing_panel_init (CcSharingPanel *self)
                     G_CALLBACK (gtk_widget_hide), NULL);
   g_signal_connect (self->remote_login_dialog, "response",
                     G_CALLBACK (gtk_widget_hide), NULL);
-  g_signal_connect (self->screen_sharing_dialog, "response",
+  g_signal_connect (self->remote_desktop_dialog, "response",
                     G_CALLBACK (gtk_widget_hide), NULL);
 
   gtk_list_box_set_activate_on_single_click (GTK_LIST_BOX (self->main_list_box),
