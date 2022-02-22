@@ -57,7 +57,7 @@ struct _CcWacomPage
 	CcWacomPanel   *panel;
 	CcWacomDevice  *stylus;
 	GList          *pads;
-	CalibArea      *area;
+	CcCalibArea    *area;
 	GSettings      *wacom_settings;
 
 	GtkWidget      *tablet_section;
@@ -113,8 +113,6 @@ get_layout_type (CcWacomDevice *device)
 
 static void
 set_calibration (CcWacomDevice  *device,
-                 const gint      display_width,
-                 const gint      display_height,
                  gdouble        *cal,
                  gsize           ncal,
                  GSettings      *settings)
@@ -139,32 +137,26 @@ set_calibration (CcWacomDevice  *device,
 	array = g_variant_new_array (G_VARIANT_TYPE_DOUBLE, tmp, nvalues);
 	g_settings_set_value (settings, "area", array);
 
-	g_debug ("Setting area to %f, %f, %f, %f (left/right/top/bottom) (last used resolution: %d x %d)",
-		 cal[0], cal[1], cal[2], cal[3],
-		 display_width, display_height);
+	g_debug ("Setting area to %f, %f, %f, %f (left/right/top/bottom)",
+		 cal[0], cal[1], cal[2], cal[3]);
 }
 
 static void
-finish_calibration (CalibArea *area,
-		    gpointer   user_data)
+finish_calibration (CcCalibArea *area,
+		    gpointer     user_data)
 {
 	CcWacomPage *page = (CcWacomPage *) user_data;
 	XYinfo axis;
 	gdouble cal[4];
-	gint display_width, display_height;
 
-	if (calib_area_finish (area)) {
-		calib_area_get_padding (area, &axis);
+	if (cc_calib_area_finish (area)) {
+		cc_calib_area_get_padding (area, &axis);
 		cal[0] = axis.x_min;
 		cal[1] = axis.x_max;
 		cal[2] = axis.y_min;
 		cal[3] = axis.y_max;
 
-		calib_area_get_display_size (area, &display_width, &display_height);
-
 		set_calibration (page->stylus,
-				 display_width,
-				 display_height,
 				 cal, 4, page->wacom_settings);
 	} else {
 		/* Reset the old values */
@@ -175,7 +167,7 @@ finish_calibration (CalibArea *area,
 		g_object_set_data (G_OBJECT (page), "old-calibration", NULL);
 	}
 
-	calib_area_free (area);
+	cc_calib_area_free (area);
 	page->area = NULL;
 	gtk_widget_set_sensitive (page->tablet_calibrate, TRUE);
 }
@@ -225,28 +217,15 @@ run_calibration (CcWacomPage *page,
 		 gdouble     *cal,
 		 GdkMonitor  *monitor)
 {
-	GdkDisplay *display = gdk_monitor_get_display (monitor);
-  GListModel *monitors;
-	guint i, n_monitor = 0;
-
 	g_assert (page->area == NULL);
 
-  monitors = gdk_display_get_monitors (display);
-	for (i = 0; i < g_list_model_get_n_items (monitors); i++) {
-    g_autoptr(GdkMonitor) m = g_list_model_get_item (monitors, i);
-		if (monitor == m) {
-			n_monitor = i;
-			break;
-		}
-	}
-
-	page->area = calib_area_new (NULL,
-				     n_monitor,
-				     cc_wacom_page_get_gdk_device (page),
-				     finish_calibration,
-				     page,
-				     THRESHOLD_MISCLICK,
-				     THRESHOLD_DOUBLECLICK);
+	page->area = cc_calib_area_new (NULL,
+                                        monitor,
+                                        cc_wacom_page_get_gdk_device (page),
+                                        finish_calibration,
+                                        page,
+                                        THRESHOLD_MISCLICK,
+                                        THRESHOLD_DOUBLECLICK);
 
 	g_object_set_data_full (G_OBJECT (page),
 				"old-calibration",
@@ -299,8 +278,7 @@ calibrate (CcWacomPage *page)
 		/* The display the tablet should be mapped to could not be located.
 		 * This shouldn't happen if the EDID data is good...
 		 */
-		g_critical("Output associated with the tablet is not connected. Unable to calibrate.");
-		return;
+		g_critical("Output associated with the tablet is not connected. Calibration may appear in wrong monitor.");
 	}
 
 	old_calibration = g_settings_get_value (page->wacom_settings, "area");
@@ -538,7 +516,7 @@ cc_wacom_page_dispose (GObject *object)
 
 	g_cancellable_cancel (self->cancellable);
 	g_clear_object (&self->cancellable);
-	g_clear_pointer (&self->area, calib_area_free);
+	g_clear_pointer (&self->area, cc_calib_area_free);
 	g_clear_pointer (&self->button_map, gtk_window_destroy);
 	g_list_free_full (self->pads, g_object_unref);
 	g_clear_object (&self->rr_screen);

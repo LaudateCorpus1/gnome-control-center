@@ -38,21 +38,18 @@ struct _CcKeyboardPanel
 {
   CcPanel             parent_instance;
 
-  GtkListBox          *input_source_list;
-
   GtkCheckButton      *per_window_source;
   GtkCheckButton      *same_source;
   GSettings           *keybindings_settings;
 
   GSettings           *input_source_settings;
-  GtkLabel            *input_switch_description;
-  GtkListBox          *special_chars_list;
-  GtkListBoxRow       *alt_chars_row;
-  GtkListBoxRow       *compose_row;
+  AdwPreferencesGroup *input_switch_group;
+  AdwActionRow        *alt_chars_row;
+  AdwActionRow        *compose_row;
   GtkWidget           *value_alternate_chars;
   GtkWidget           *value_compose;
 
-  GtkListBoxRow       *common_shortcuts_row;
+  AdwActionRow        *common_shortcuts_row;
 };
 
 CC_PANEL_REGISTER (CcKeyboardPanel, cc_keyboard_panel)
@@ -99,17 +96,8 @@ static const CcXkbModifier COMPOSE_MODIFIER = {
   NULL,
 };
 
-static const gchar *custom_css =
-".keyboard-panel-radio-button {"
-"    padding-left: 6px;"
-"    padding-right: 12px;"
-"    padding-top: 12px;"
-"    padding-bottom: 12px;"
-"}";
-
 static void
-special_chars_activated (GtkWidget       *button,
-                         GtkListBoxRow   *row,
+special_chars_activated (AdwActionRow    *row,
                          CcKeyboardPanel *self)
 {
   const CcXkbModifier *modifier;
@@ -131,8 +119,7 @@ special_chars_activated (GtkWidget       *button,
 }
 
 static void
-keyboard_shortcuts_activated (GtkWidget       *button,
-                              GtkListBoxRow   *row,
+keyboard_shortcuts_activated (AdwActionRow    *row,
                               CcKeyboardPanel *self)
 {
   GtkWindow *window;
@@ -199,11 +186,9 @@ cc_keyboard_panel_class_init (CcKeyboardPanelClass *klass)
 
   gtk_widget_class_set_template_from_resource (widget_class, "/org/gnome/control-center/keyboard/cc-keyboard-panel.ui");
 
-  gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, input_source_list);
-  gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, input_switch_description);
+  gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, input_switch_group);
   gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, per_window_source);
   gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, same_source);
-  gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, special_chars_list);
   gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, alt_chars_row);
   gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, compose_row);
   gtk_widget_class_bind_template_child (widget_class, CcKeyboardPanel, value_alternate_chars);
@@ -242,19 +227,9 @@ translate_switch_input_source (GValue *value,
 static void
 cc_keyboard_panel_init (CcKeyboardPanel *self)
 {
-  GtkCssProvider *provider;
-
   g_resources_register (cc_keyboard_get_resource ());
 
   gtk_widget_init_template (GTK_WIDGET (self));
-
-  provider = gtk_css_provider_new ();
-  gtk_css_provider_load_from_data (provider, custom_css, -1);
-
-  gtk_style_context_add_provider_for_display (gdk_display_get_default (),
-                                              GTK_STYLE_PROVIDER (provider),
-                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION + 1);
-  g_object_unref (provider);
 
   self->input_source_settings = g_settings_new ("org.gnome.desktop.input-sources");
 
@@ -267,7 +242,7 @@ cc_keyboard_panel_init (CcKeyboardPanel *self)
                    G_SETTINGS_BIND_DEFAULT | G_SETTINGS_BIND_INVERT_BOOLEAN);
   self->keybindings_settings = g_settings_new ("org.gnome.desktop.wm.keybindings");
   g_settings_bind_with_mapping (self->keybindings_settings, "switch-input-source",
-                                self->input_switch_description, "label",
+                                self->input_switch_group, "description",
                                 G_SETTINGS_BIND_GET,
                                 translate_switch_input_source,
                                 NULL, NULL, NULL);

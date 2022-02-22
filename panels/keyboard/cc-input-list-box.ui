@@ -9,6 +9,7 @@
         <property name="vexpand">True</property>
         <property name="selection-mode">none</property>
         <signal name="row_activated" handler="input_row_activated_cb" object="CcInputListBox" swapped="yes"/>
+        <signal name="keynav_failed" handler="keynav_failed_cb" object="CcInputListBox" swapped="yes"/>
         <style>
           <class name="boxed-list"/>
         </style>
@@ -43,10 +44,4 @@
     </child>
 
   </template>
-  <object class="GtkSizeGroup" id="input_size_group">
-    <property name="mode">vertical</property>
-    <widgets>
-      <widget name="no_inputs_row"/>
-    </widgets>
-  </object>
 </interface>

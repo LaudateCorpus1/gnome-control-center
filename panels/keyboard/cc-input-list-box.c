@@ -42,7 +42,6 @@ struct _CcInputListBox {
   AdwBin          parent_instance;
 
   GtkListBoxRow   *add_input_row;
-  GtkSizeGroup    *input_size_group;
   GtkListBox      *listbox;
   GtkListBoxRow   *no_inputs_row;
 
@@ -183,6 +182,23 @@ maybe_start_ibus (void)
 
 #endif
 
+static gboolean
+keynav_failed_cb (CcInputListBox   *self,
+                  GtkDirectionType  direction,
+                  GtkWidget        *list)
+{
+  GtkWidget *toplevel = GTK_WIDGET (gtk_widget_get_root (GTK_WIDGET (self)));
+
+  if (!toplevel)
+    return FALSE;
+
+  if (direction != GTK_DIR_UP && direction != GTK_DIR_DOWN)
+    return FALSE;
+
+  return gtk_widget_child_focus (toplevel, direction == GTK_DIR_UP ?
+                                 GTK_DIR_TAB_BACKWARD : GTK_DIR_TAB_FORWARD);
+}
+
 static void
 row_settings_cb (CcInputListBox *self,
                  CcInputRow    *row)
@@ -285,7 +301,6 @@ add_input_row (CcInputListBox *self, CcInputSource *source)
 
   row = cc_input_row_new (source);
   gtk_widget_show (GTK_WIDGET (row));
-  gtk_size_group_add_widget (self->input_size_group, GTK_WIDGET (row));
   g_signal_connect_object (row, "show-settings", G_CALLBACK (row_settings_cb), self, G_CONNECT_SWAPPED);
   g_signal_connect_object (row, "show-layout", G_CALLBACK (row_layout_cb), self, G_CONNECT_SWAPPED);
   g_signal_connect_object (row, "move-row", G_CALLBACK (row_moved_cb), self, G_CONNECT_SWAPPED);
@@ -733,11 +748,11 @@ cc_input_list_box_class_init (CcInputListBoxClass *klass)
   gtk_widget_class_set_template_from_resource (widget_class, "/org/gnome/control-center/keyboard/cc-input-list-box.ui");
 
   gtk_widget_class_bind_template_child (widget_class, CcInputListBox, add_input_row);
-  gtk_widget_class_bind_template_child (widget_class, CcInputListBox, input_size_group);
   gtk_widget_class_bind_template_child (widget_class, CcInputListBox, listbox);
   gtk_widget_class_bind_template_child (widget_class, CcInputListBox, no_inputs_row);
 
   gtk_widget_class_bind_template_callback (widget_class, input_row_activated_cb);
+  gtk_widget_class_bind_template_callback (widget_class, keynav_failed_cb);
 }
 
 static void
