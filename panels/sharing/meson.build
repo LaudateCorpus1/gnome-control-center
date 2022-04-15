@@ -41,6 +41,8 @@ sources = files(
   'cc-remote-login.c',
   'cc-sharing-networks.c',
   'cc-gnome-remote-desktop.c',
+  'cc-tls-certificate.c',
+  'cc-systemd-service.c',
   'file-share-properties.c',
 )
 
@@ -73,12 +75,19 @@ cflags += [
 ]
 
 libsecret_dep = dependency('libsecret-1')
+gnutls_dep = dependency('gnutls')
 
 panels_libs += static_library(
   cappletname,
   sources: sources,
   include_directories: [ top_inc, common_inc ],
-  dependencies: [common_deps, libsecret_dep],
+  dependencies: [
+    common_deps,
+    libsecret_dep,
+    gnutls_dep,
+    gcr_dep,
+    pwquality_dep,
+  ],
   c_args: cflags
 )
 
@@ -86,12 +95,15 @@ name = 'cc-remote-login-helper'
 
 deps = [
   gio_dep,
-  glib_dep
+  glib_dep,
 ]
 
 executable(
   name,
-  name + '.c',
+  sources: [
+    name + '.c',
+    'cc-systemd-service.c',
+  ],
   include_directories: top_inc,
   dependencies: deps,
   c_args: cflags,

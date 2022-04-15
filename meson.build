@@ -1,6 +1,6 @@
 project(
   'gnome-control-center', 'c',
-        version : '42.beta',
+        version : '42.0',
         license : 'GPL2+',
   meson_version : '>= 0.53.0'
 )
@@ -128,6 +128,8 @@ gudev_dep = dependency('gudev-1.0', version: '>= 232')
 x11_dep = dependency('x11')
 xi_dep = dependency('xi', version: '>= 1.2')
 epoxy_dep = dependency('epoxy')
+gcr_dep = dependency('gcr-base-3')
+pwquality_dep = dependency('pwquality', version: '>= 1.2.2')
 
 m_dep = cc.find_library('m')
 
@@ -146,7 +148,7 @@ polkit_gobject_dep = dependency('polkit-gobject-1', version: '>= 0.103')
 # https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/491
 polkit_files = [ 'gettext/its/polkit.its', 'gettext/its/polkit.loc' ]
 foreach polkit_file: polkit_files
-  r = run_command('build-aux/meson/find_xdg_file.py', polkit_file)
+  r = run_command('build-aux/meson/find_xdg_file.py', polkit_file, check: true)
   assert(r.returncode() == 0, 'ITS support missing from polkit, please upgrade or contact your distribution')
 endforeach
 
@@ -276,7 +278,7 @@ subdir('shell')
 subdir('search-provider')
 
 if get_option('tests')
-#  subdir('tests')
+  subdir('tests')
 endif
 
 if get_option('documentation')

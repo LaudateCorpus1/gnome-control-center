@@ -1,4 +1,28 @@
 ================
+Version 42.0
+================
+
+- Updated AppData screenshots
+- Re-enable tests
+- Updated translations
+
+================
+Version 42.rc
+================
+
+- Updated translations
+
+Keyboard
+- Restore _GNOME_WM_KEYBINDINGS support
+
+User Accounts
+- Bring back Fingerprint dialog
+- Fix avatar loading
+
+Wacom
+- Bring back empty state
+
+================
 Version 42.beta
 ================
 

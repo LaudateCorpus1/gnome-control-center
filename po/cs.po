@@ -25,16 +25,16 @@ msgstr ""
 "Project-Id-Version: gnome-control-center\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-control-center/"
 "issues\n"
-"POT-Creation-Date: 2022-02-13 13:41+0000\n"
-"PO-Revision-Date: 2022-02-14 19:02+0100\n"
-"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"POT-Creation-Date: 2022-03-18 10:40+0000\n"
+"PO-Revision-Date: 2022-03-31 16:08+0200\n"
+"Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Project-Style: gnome\n"
 
 #: panels/applications/cc-applications-panel.c:803
@@ -180,8 +180,8 @@ msgstr "Přijímat od systému požadavky na hledání a předávat výsledky."
 #: panels/keyboard/cc-keyboard-shortcut-editor.ui:118
 #: panels/keyboard/cc-xkb-modifier-dialog.c:344
 #: panels/keyboard/keyboard-shortcuts.c:367 panels/network/network-proxy.ui:105
-#: panels/user-accounts/cc-user-panel.c:765
-#: panels/user-accounts/cc-user-panel.c:869
+#: panels/user-accounts/cc-user-panel.c:789
+#: panels/user-accounts/cc-user-panel.c:879
 #: panels/wwan/cc-wwan-device-page.c:478
 #: subprojects/gvc/gvc-mixer-control.c:1900
 msgid "Disabled"
@@ -350,7 +350,7 @@ msgstr "Vyběr obrázku"
 #: panels/color/cc-color-calibrate.ui:22 panels/color/cc-color-panel.c:284
 #: panels/color/cc-color-panel.c:844 panels/common/cc-language-chooser.ui:21
 #: panels/display/cc-display-panel.ui:31
-#: panels/info-overview/cc-info-overview-panel.ui:197
+#: panels/info-overview/cc-info-overview-panel.ui:198
 #: panels/keyboard/cc-input-chooser.ui:11
 #: panels/network/cc-wifi-hotspot-dialog.ui:123
 #: panels/network/cc-wifi-panel.c:881
@@ -362,14 +362,14 @@ msgstr "Vyběr obrázku"
 #: panels/printers/pp-details-dialog.c:263
 #: panels/region/cc-format-chooser.ui:24
 #: panels/search/cc-search-locations-dialog.c:677
-#: panels/sharing/cc-sharing-panel.c:432 panels/usage/cc-usage-panel.c:139
+#: panels/sharing/cc-sharing-panel.c:523 panels/usage/cc-usage-panel.c:139
 #: panels/user-accounts/cc-add-user-dialog.ui:25
-#: panels/user-accounts/cc-avatar-chooser.c:94
-#: panels/user-accounts/cc-avatar-chooser.c:165
-#: panels/user-accounts/cc-fingerprint-dialog.ui:30
+#: panels/user-accounts/cc-avatar-chooser.c:96
+#: panels/user-accounts/cc-avatar-chooser.c:167
+#: panels/user-accounts/cc-fingerprint-dialog.ui:32
 #: panels/user-accounts/cc-password-dialog.ui:18
-#: panels/user-accounts/cc-user-panel.c:555
-#: panels/user-accounts/cc-user-panel.c:573
+#: panels/user-accounts/cc-user-panel.c:579
+#: panels/user-accounts/cc-user-panel.c:597
 #: panels/user-accounts/data/join-dialog.ui:17
 #: panels/wwan/cc-wwan-mode-dialog.ui:32
 #: panels/wwan/cc-wwan-network-dialog.ui:139
@@ -380,8 +380,8 @@ msgstr "_Zrušit"
 #: panels/background/cc-background-chooser.c:311
 #: panels/network/connection-editor/vpn-helpers.c:227
 #: panels/printers/pp-details-dialog.c:264
-#: panels/sharing/cc-sharing-panel.c:433
-#: panels/user-accounts/cc-avatar-chooser.c:166
+#: panels/sharing/cc-sharing-panel.c:524
+#: panels/user-accounts/cc-avatar-chooser.c:168
 msgid "_Open"
 msgstr "_Otevřít"
 
@@ -620,7 +620,7 @@ msgstr "_Pokračovat"
 
 #. This button returns the user back to the color control panel
 #: panels/color/cc-color-calibrate.ui:40 panels/region/cc-format-chooser.ui:49
-#: panels/user-accounts/cc-fingerprint-dialog.ui:58
+#: panels/user-accounts/cc-fingerprint-dialog.ui:60
 msgid "_Done"
 msgstr "_Hotovo"
 
@@ -1655,14 +1655,6 @@ msgctxt "display setting"
 msgid "Scale"
 msgstr "Škálovat"
 
-#: panels/display/cc-night-light-page.c:624
-msgid "More Warm"
-msgstr "Více teplé"
-
-#: panels/display/cc-night-light-page.c:636
-msgid "Less Warm"
-msgstr "Méně teplé"
-
 #. Inhibit the redshift functionality until the next day starts
 #: panels/display/cc-night-light-page.ui:21
 msgid "Temporarily Disabled Until Tomorrow"
@@ -1733,7 +1725,7 @@ msgstr "odp."
 msgid "To"
 msgstr "Do"
 
-#: panels/display/cc-night-light-page.ui:302
+#: panels/display/cc-night-light-page.ui:316
 msgid "Color Temperature"
 msgstr "Barevná teplota"
 
@@ -1802,6 +1794,7 @@ msgid "System Logo"
 msgstr "Logo systému"
 
 #: panels/info-overview/cc-info-overview-panel.ui:32
+#: panels/sharing/cc-sharing-panel.ui:299
 msgid "Device Name"
 msgstr "Název zařízení"
 
@@ -1866,7 +1859,7 @@ msgstr ""
 "Název zařízení se používá k identifikaci tohoto zařízení, když je prohlíženo "
 "přes síť, nebo když se párují zařízení Bluetooth."
 
-#: panels/info-overview/cc-info-overview-panel.ui:189
+#: panels/info-overview/cc-info-overview-panel.ui:190
 msgid "_Rename"
 msgstr "Přej_menovat"
 
@@ -2073,9 +2066,9 @@ msgstr "Zobrazit rozložení klávesnice"
 msgid "Remove"
 msgstr "Odebrat"
 
-#: panels/keyboard/cc-keyboard-manager.c:483
-#: panels/keyboard/cc-keyboard-manager.c:491
-#: panels/keyboard/cc-keyboard-manager.c:757
+#: panels/keyboard/cc-keyboard-manager.c:485
+#: panels/keyboard/cc-keyboard-manager.c:493
+#: panels/keyboard/cc-keyboard-manager.c:922
 msgid "Custom Shortcuts"
 msgstr "Vlastní klávesové zkratky"
 
@@ -2231,7 +2224,6 @@ msgstr ""
 #: panels/keyboard/cc-keyboard-shortcut-dialog.c:467
 #: panels/keyboard/cc-keyboard-shortcut-editor.ui:23
 #: panels/network/wireless-security/ws-file-chooser-button.c:94
-#: panels/printers/authentication-dialog.ui:19
 #: panels/printers/ppd-selection-dialog.ui:83
 #: panels/wwan/cc-wwan-device-page.c:189
 msgid "Cancel"
@@ -2317,7 +2309,7 @@ msgstr ""
 #: panels/keyboard/cc-keyboard-shortcut-editor.ui:153
 #: panels/printers/pp-details-dialog.ui:39
 #: panels/user-accounts/cc-add-user-dialog.ui:68
-#: panels/user-accounts/cc-user-panel.ui:125
+#: panels/user-accounts/cc-user-panel.ui:132
 #: panels/wwan/cc-wwan-apn-dialog.ui:96
 msgid "Name"
 msgstr "Název"
@@ -2881,9 +2873,8 @@ msgstr "Název sítě"
 
 #. Translators: This is a password needed for printing.
 #: panels/network/cc-wifi-hotspot-dialog.ui:74
-#: panels/printers/authentication-dialog.ui:55
 #: panels/printers/new-printer-dialog.ui:331
-#: panels/printers/pp-jobs-dialog.ui:52
+#: panels/printers/pp-jobs-dialog.ui:52 panels/sharing/cc-sharing-panel.ui:376
 #: panels/user-accounts/cc-add-user-dialog.ui:145
 #: panels/user-accounts/cc-add-user-dialog.ui:181
 #: panels/user-accounts/cc-add-user-dialog.ui:362
@@ -3033,7 +3024,7 @@ msgstr "WPA2"
 #. TRANSLATORS: this Enterprise WiFi security
 #: panels/network/connection-editor/ce-page-details.c:125
 msgid "Enterprise"
-msgstr "Firemní"
+msgstr "Podnikové"
 
 # Zabezpečení
 #: panels/network/connection-editor/ce-page-details.c:130
@@ -3598,16 +3589,6 @@ msgstr ""
 msgid "This is not recommended for untrusted public networks."
 msgstr "Nedoporučuje se v nedůvěryhodných veřejných sítích."
 
-#. update title
-#. Translators: this is the title of the connection details
-#. * window for vpn connections, it is also used to display
-#. * vpn connections in the device list.
-#.
-#: panels/network/net-vpn.c:63 panels/network/net-vpn.c:156
-#, c-format
-msgid "%s VPN"
-msgstr "VPN %s"
-
 #: panels/network/network-bluetooth.ui:11
 msgid "Turn device off"
 msgstr "Vypnout zařízení"
@@ -4051,7 +4032,7 @@ msgstr "_Uživatelské jméno"
 #: panels/network/wireless-security/ws-sae.ui:10
 #: panels/network/wireless-security/ws-wpa-psk.ui:10
 #: panels/sharing/cc-sharing-panel.ui:152
-#: panels/user-accounts/cc-user-panel.ui:168
+#: panels/user-accounts/cc-user-panel.ui:175
 msgid "_Password"
 msgstr "_Heslo"
 
@@ -4877,29 +4858,6 @@ msgstr ""
 "napájení;uspání;uspání do paměti;uspání na disk;baterie;jas;ztlumit;monitor;"
 "DPMS;neaktivní;energie;"
 
-#: panels/printers/authentication-dialog.ui:9
-msgid " "
-msgstr " "
-
-#: panels/printers/authentication-dialog.ui:24
-msgid "Authenticate"
-msgstr "Ověření totožnosti"
-
-#. Translators: This is a username on a print server.
-#: panels/printers/authentication-dialog.ui:41
-#: panels/printers/new-printer-dialog.ui:311
-#: panels/printers/pp-jobs-dialog.ui:41
-#: panels/user-accounts/cc-add-user-dialog.ui:94
-#: panels/user-accounts/cc-add-user-dialog.ui:342
-#: panels/wwan/cc-wwan-apn-dialog.ui:148
-msgid "Username"
-msgstr "Uživatelské jméno"
-
-#: panels/printers/authentication-dialog.ui:92
-#: panels/printers/new-printer-dialog.ui:286
-msgid "Authentication Required"
-msgstr "Požadováno ověření totožnosti"
-
 #. Translators: %s is the printer name
 #: panels/printers/cc-printers-panel.c:676
 #, c-format
@@ -4962,11 +4920,24 @@ msgstr "Žádná tiskárna nebyla nalezena"
 msgid "Enter a network address or search for a printer"
 msgstr "Zadejte síťovou adresu tiskárny nebo ji vyhledejte"
 
+#: panels/printers/new-printer-dialog.ui:286
+msgid "Authentication Required"
+msgstr "Požadováno ověření totožnosti"
+
 #: panels/printers/new-printer-dialog.ui:302
 msgid "Enter username and password to view printers on Print Server."
 msgstr ""
 "Chcete-li vidět tiskárny z tiskového serveru, zadejte uživatelské jméno a "
 "heslo."
+
+#. Translators: This is a username on a print server.
+#: panels/printers/new-printer-dialog.ui:311
+#: panels/printers/pp-jobs-dialog.ui:41
+#: panels/user-accounts/cc-add-user-dialog.ui:94
+#: panels/user-accounts/cc-add-user-dialog.ui:342
+#: panels/wwan/cc-wwan-apn-dialog.ui:148
+msgid "Username"
+msgstr "Uživatelské jméno"
 
 #. Translators: This is the title of the dialog. %s is the printer name.
 #: panels/printers/pp-details-dialog.c:74
@@ -5026,7 +4997,7 @@ msgid "Loading drivers database…"
 msgstr "Načítá se databáze ovladačů…"
 
 #: panels/printers/ppd-selection-dialog.ui:91
-#: panels/user-accounts/cc-avatar-chooser.c:96
+#: panels/user-accounts/cc-avatar-chooser.c:98
 msgid "Select"
 msgstr "Vybrat"
 
@@ -5636,16 +5607,17 @@ msgstr "Odhlásit se…"
 msgid ""
 "The language setting is used for interface text and web pages. Formats is "
 "used for numbers, dates, and currencies."
-msgstr "Formát používaný pro čísla, data a měny."
-"Nastavení jazyka se používá pro texty uživatelského rozhraní a webové "
-"stránky. Formát se používá pro čísla, datum a měny."
+msgstr ""
+"Formát používaný pro čísla, data a měny.Nastavení jazyka se používá pro "
+"texty uživatelského rozhraní a webové stránky. Formát se používá pro čísla, "
+"datum a měny."
 
 #: panels/region/cc-region-panel.ui:51
 msgid "Your Account"
 msgstr "Váš účet"
 
 #: panels/region/cc-region-panel.ui:56 panels/region/cc-region-panel.ui:95
-#: panels/user-accounts/cc-user-panel.ui:292
+#: panels/user-accounts/cc-user-panel.ui:299
 msgid "_Language"
 msgstr "Jazy_k"
 
@@ -5900,32 +5872,32 @@ msgstr "Nebyly zvoleny žádné sítě pro sdílení"
 msgid "Networks"
 msgstr "Sítě"
 
-#: panels/sharing/cc-sharing-panel.c:276
+#: panels/sharing/cc-sharing-panel.c:367
 msgctxt "service is enabled"
 msgid "On"
 msgstr "Zapnuto"
 
-#: panels/sharing/cc-sharing-panel.c:278 panels/sharing/cc-sharing-panel.c:305
+#: panels/sharing/cc-sharing-panel.c:369 panels/sharing/cc-sharing-panel.c:396
 msgctxt "service is disabled"
 msgid "Off"
 msgstr "Vypnuto"
 
-#: panels/sharing/cc-sharing-panel.c:308
+#: panels/sharing/cc-sharing-panel.c:399
 msgctxt "service is enabled"
 msgid "Enabled"
 msgstr "Zapnuto"
 
-#: panels/sharing/cc-sharing-panel.c:311
+#: panels/sharing/cc-sharing-panel.c:402
 msgctxt "service is active"
 msgid "Active"
 msgstr "Aktivní"
 
-#: panels/sharing/cc-sharing-panel.c:429
+#: panels/sharing/cc-sharing-panel.c:520
 msgid "Choose a Folder"
 msgstr "Výběr složky"
 
 #. TRANSLATORS: %s is replaced with a link to a dav://<hostname> URL
-#: panels/sharing/cc-sharing-panel.c:657
+#: panels/sharing/cc-sharing-panel.c:748
 #, c-format
 msgid ""
 "File Sharing allows you to share your Public folder with others on your "
@@ -5935,7 +5907,7 @@ msgstr ""
 "síti pomocí: %s"
 
 #. TRANSLATORS: %s is replaced with a link to a "ssh <hostname>" command to run
-#: panels/sharing/cc-sharing-panel.c:663
+#: panels/sharing/cc-sharing-panel.c:754
 #, c-format
 msgid ""
 "When remote login is enabled, remote users can connect using the Secure "
@@ -5945,16 +5917,6 @@ msgstr ""
 "Když je vzdálené přihlašování povolené, mohou se vzdálení uživatelé připojit "
 "příkazem Secure Shell:\n"
 "%s"
-
-#. TRANSLATORS: %s is replaced with a link to a vnc://<hostname> URL
-#: panels/sharing/cc-sharing-panel.c:669
-#, c-format
-msgid ""
-"Screen sharing allows remote users to view or control your screen by "
-"connecting to %s"
-msgstr ""
-"Sdílení obrazovky umožňuje vzdáleným uživatelům, aby viděli nebo ovládali "
-"vaši obrazovku připojením k %s"
 
 #: panels/sharing/cc-sharing-panel.ui:9
 #: panels/sharing/gnome-sharing-panel.desktop.in.in:3
@@ -5970,8 +5932,8 @@ msgid "_File Sharing"
 msgstr "S_dílení souborů"
 
 #: panels/sharing/cc-sharing-panel.ui:65
-msgid "_Screen Sharing"
-msgstr "Sdílení o_brazovky"
+msgid "Remote _Desktop"
+msgstr "Vz_dálená plocha"
 
 #: panels/sharing/cc-sharing-panel.ui:72
 msgid "_Media Sharing"
@@ -5995,42 +5957,84 @@ msgid "Remote Login"
 msgstr "Vzdálené přihlášení"
 
 #: panels/sharing/cc-sharing-panel.ui:250
-msgid "Screen Sharing"
-msgstr "Sdílení obrazovky"
+#: panels/sharing/cc-sharing-panel.ui:267
+msgid "Remote Desktop"
+msgstr "Vzdálená plocha"
 
-#: panels/sharing/cc-sharing-panel.ui:298
-msgid "_Allow connections to control the screen"
-msgstr "Umožnit připojení pro ovládání obr_azovky"
+#: panels/sharing/cc-sharing-panel.ui:263
+msgid ""
+"Remote desktop allows viewing and controlling your desktop from another "
+"computer."
+msgstr ""
+"Vzdálená plocha umožňuje zobrazení a ovládání vašeho uživatelského prostředí "
+"z jiného počítače."
 
-#: panels/sharing/cc-sharing-panel.ui:316
-msgid "_Password:"
-msgstr "_Heslo:"
+#: panels/sharing/cc-sharing-panel.ui:268
+msgid "Enable or disable remote desktop connections to this computer."
+msgstr ""
+"Povolit nebo zakázat u tohoto počítače přihlášení přes vzdálenou plochu."
 
-#: panels/sharing/cc-sharing-panel.ui:339
-msgid "_Show Password"
-msgstr "_Zobrazit heslo"
+#: panels/sharing/cc-sharing-panel.ui:280
+msgid "Remote Control"
+msgstr "Vzdálené ovládání"
 
-#: panels/sharing/cc-sharing-panel.ui:352
-msgid "Access Options"
-msgstr "Volby přístupu"
+#: panels/sharing/cc-sharing-panel.ui:281
+msgid "Allows remote connections to control the screen."
+msgstr "Umožnit vzdálenému připojení ovládat obrazovku."
 
-#: panels/sharing/cc-sharing-panel.ui:364
-msgid "_New connections must ask for access"
-msgstr "_Nové připojení se musí dotázat o svolení"
+#: panels/sharing/cc-sharing-panel.ui:294
+msgid "How to Connect"
+msgstr "Jak se připojovat"
 
-#: panels/sharing/cc-sharing-panel.ui:375
-msgid "_Require a password"
-msgstr "_Vyžadovat heslo"
+#: panels/sharing/cc-sharing-panel.ui:295
+msgid ""
+"Connect to this computer using the device name or remote desktop address."
+msgstr ""
+"Připojovat se k tomuto počítači pomocí názvu zařízení nebo adresy vzdálené "
+"plochy."
 
-#: panels/sharing/cc-sharing-panel.ui:400
+#: panels/sharing/cc-sharing-panel.ui:323
+msgid "Remote Desktop Address"
+msgstr "Adresa vzdálené plochy"
+
+#: panels/sharing/cc-sharing-panel.ui:350
+msgid "Authentication"
+msgstr "Ověření totožnosti"
+
+#: panels/sharing/cc-sharing-panel.ui:351
+msgid "The user name and password are required to connect to this computer."
+msgstr ""
+"Pro připojení k tomuto počítači je vyžadováno uživatelské jméno a heslo."
+
+#: panels/sharing/cc-sharing-panel.ui:355
+msgid "User Name"
+msgstr "Uživatelské jméno"
+
+#: panels/sharing/cc-sharing-panel.ui:401
+msgid "Verify Encryption"
+msgstr "Ověřit šifrování"
+
+#: panels/sharing/cc-sharing-panel.ui:430
+msgid "Encryption Fingerprint"
+msgstr "Otisk šifrovacího klíče"
+
+#: panels/sharing/cc-sharing-panel.ui:431
+msgid ""
+"The encryption fingerprint can be seen in connecting clients and should be "
+"identical"
+msgstr ""
+"Otisk šifrovacího klíče by měl být vidět na připojovaném klientovi a měl by "
+"se shodovat."
+
+#: panels/sharing/cc-sharing-panel.ui:463
 msgid "Media Sharing"
 msgstr "Sdílení multimédií"
 
-#: panels/sharing/cc-sharing-panel.ui:422
+#: panels/sharing/cc-sharing-panel.ui:485
 msgid "Share music, photos and videos over the network."
 msgstr "Sdílet hudbu, fotografie a videa po síti."
 
-#: panels/sharing/cc-sharing-panel.ui:435
+#: panels/sharing/cc-sharing-panel.ui:498
 msgid "Folders"
 msgstr "Složky"
 
@@ -7076,26 +7080,26 @@ msgstr ""
 msgid "Failed to add account"
 msgstr "Přidání účtu selhalo"
 
-#: panels/user-accounts/cc-add-user-dialog.c:673
+#: panels/user-accounts/cc-add-user-dialog.c:679
 #: panels/user-accounts/cc-password-dialog.c:258
 msgid "The passwords do not match."
 msgstr "Hesla si neodpovídají."
 
-#: panels/user-accounts/cc-add-user-dialog.c:877
-#: panels/user-accounts/cc-add-user-dialog.c:916
-#: panels/user-accounts/cc-add-user-dialog.c:934
+#: panels/user-accounts/cc-add-user-dialog.c:883
+#: panels/user-accounts/cc-add-user-dialog.c:922
+#: panels/user-accounts/cc-add-user-dialog.c:940
 msgid "Failed to register account"
 msgstr "Registrace účtu selhala"
 
-#: panels/user-accounts/cc-add-user-dialog.c:1049
+#: panels/user-accounts/cc-add-user-dialog.c:1055
 msgid "No supported way to authenticate with this domain"
 msgstr "Ověření s touto doménou není podporováno"
 
-#: panels/user-accounts/cc-add-user-dialog.c:1113
+#: panels/user-accounts/cc-add-user-dialog.c:1119
 msgid "Failed to join domain"
 msgstr "Připojení k doméně selhalo"
 
-#: panels/user-accounts/cc-add-user-dialog.c:1168
+#: panels/user-accounts/cc-add-user-dialog.c:1174
 msgid ""
 "That login name didn’t work.\n"
 "Please try again."
@@ -7103,7 +7107,7 @@ msgstr ""
 "Toto přihlašovací jméno nefunguje.\n"
 "Zkuste to, prosím, znovu."
 
-#: panels/user-accounts/cc-add-user-dialog.c:1175
+#: panels/user-accounts/cc-add-user-dialog.c:1181
 msgid ""
 "That login password didn’t work.\n"
 "Please try again."
@@ -7111,11 +7115,11 @@ msgstr ""
 "Toto přihlašovací heslo nefunguje.\n"
 "Zkuste to, prosím, znovu."
 
-#: panels/user-accounts/cc-add-user-dialog.c:1183
+#: panels/user-accounts/cc-add-user-dialog.c:1189
 msgid "Failed to log into domain"
 msgstr "Přihlášení do domény selhalo"
 
-#: panels/user-accounts/cc-add-user-dialog.c:1238
+#: panels/user-accounts/cc-add-user-dialog.c:1244
 msgid "Unable to find the domain. Maybe you misspelled it?"
 msgstr "Nelze najít doménu. Nemáte v názvu překlep?"
 
@@ -7170,7 +7174,7 @@ msgstr ""
 "spravované uživatelské účty. Tento účet můžete pak použít i pro přístup k "
 "firemním prostředkům na Internetu."
 
-#: panels/user-accounts/cc-avatar-chooser.c:162
+#: panels/user-accounts/cc-avatar-chooser.c:164
 msgid "Browse for more pictures"
 msgstr "Procházet další obrázky"
 
@@ -7182,19 +7186,19 @@ msgstr "Vybrat soubor…"
 msgid "Fingerprint Manager"
 msgstr "Správa otisků prstů"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:18
+#: panels/user-accounts/cc-fingerprint-dialog.ui:20
 msgid "Fingerprint"
 msgstr "Otiskem prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:86
+#: panels/user-accounts/cc-fingerprint-dialog.ui:88
 msgid "_No"
 msgstr "_Ne"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:94
+#: panels/user-accounts/cc-fingerprint-dialog.ui:96
 msgid "_Yes"
 msgstr "_Ano"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:114
+#: panels/user-accounts/cc-fingerprint-dialog.ui:116
 msgid ""
 "Do you want to delete your registered fingerprints so fingerprint login is "
 "disabled?"
@@ -7202,28 +7206,28 @@ msgstr ""
 "Přejete si smazat registrované otisky prstů, čímž dojde k vypnutí přihlášení "
 "otiskem prstů?"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:170
+#: panels/user-accounts/cc-fingerprint-dialog.ui:172
 msgid "No fingerprint device"
 msgstr "Není k dispozici žádná čtečka otisku prstu"
 
 #. Translators: This is the empty state page label which states that there are no devices ready.
-#: panels/user-accounts/cc-fingerprint-dialog.ui:185
+#: panels/user-accounts/cc-fingerprint-dialog.ui:187
 msgid "No Fingerprint device"
 msgstr "Není k dispozici žádná čtečka otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:194
+#: panels/user-accounts/cc-fingerprint-dialog.ui:196
 msgid "Ensure the device is properly connected."
 msgstr "Ujistěte se, že zařízení je správně připojené."
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:202
+#: panels/user-accounts/cc-fingerprint-dialog.ui:204
 msgid "Fingerprint Device"
 msgstr "Čtečka otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:211
+#: panels/user-accounts/cc-fingerprint-dialog.ui:213
 msgid "Choose the fingerprint device you want to configure"
 msgstr "Zvolte čtečku otisku prstu, kterou chcete nastavit."
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:242
+#: panels/user-accounts/cc-fingerprint-dialog.ui:243
 msgid "Fingerprint Login"
 msgstr "Přihlášení otiskem prstu"
 
@@ -7243,125 +7247,121 @@ msgstr "_Smazat otisky prstů"
 msgid "Fingerprint Enroll"
 msgstr "Sejmutí otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:349
-msgid "_Re-enroll this finger…"
-msgstr "Znovu sejmout tento otisk p_rstu…"
-
-#: panels/user-accounts/cc-fingerprint-dialog.c:236
+#: panels/user-accounts/cc-fingerprint-dialog.c:235
 msgid "the device needs to be claimed to perform this action"
 msgstr "k provedení této činnosti je potřeba výhradní přístup k zařízení"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:238
+#: panels/user-accounts/cc-fingerprint-dialog.c:237
 msgid "the device is already claimed by another process"
 msgstr "zařízení si již nárokuje jiný proces"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:240
+#: panels/user-accounts/cc-fingerprint-dialog.c:239
 msgid "you do not have permission to perform the action"
 msgstr "nemáte oprávnění provádět tuto činnost"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:242
+#: panels/user-accounts/cc-fingerprint-dialog.c:241
 msgid "no prints have been enrolled"
 msgstr "nebyl sejmut žádný otisk prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:251
+#: panels/user-accounts/cc-fingerprint-dialog.c:250
 msgid "Failed to communicate with the device during enrollment"
 msgstr "Selhala komunikace se zařízením během snímání otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:255
+#: panels/user-accounts/cc-fingerprint-dialog.c:254
 msgid "Failed to communicate with the fingerprint reader"
 msgstr "Selhala komunikace se čtečkou otisků prstů"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:257
+#: panels/user-accounts/cc-fingerprint-dialog.c:256
 msgid "Failed to communicate with the fingerprint daemon"
 msgstr "Selhala komunikace s démonem pro otisky prstů"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:606
+#: panels/user-accounts/cc-fingerprint-dialog.c:539
 #, c-format
 msgid "Failed to list fingerprints: %s"
 msgstr "Selhalo vypsání otisku prstů: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:673
+#: panels/user-accounts/cc-fingerprint-dialog.c:606
 #, c-format
 msgid "Failed to delete saved fingerprints: %s"
 msgstr "Selhalo smazání uložených otisků prstů: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:704
+#: panels/user-accounts/cc-fingerprint-dialog.c:637
 msgid "Left thumb"
 msgstr "Palec levé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:706
+#: panels/user-accounts/cc-fingerprint-dialog.c:639
 msgid "Left middle finger"
 msgstr "Prostředníček levé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:708
+#: panels/user-accounts/cc-fingerprint-dialog.c:641
 msgid "_Left index finger"
 msgstr "Ukazováček _levé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:710
+#: panels/user-accounts/cc-fingerprint-dialog.c:643
 msgid "Left ring finger"
 msgstr "Prsteníček levé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:712
+#: panels/user-accounts/cc-fingerprint-dialog.c:645
 msgid "Left little finger"
 msgstr "Malíček levé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:714
+#: panels/user-accounts/cc-fingerprint-dialog.c:647
 msgid "Right thumb"
 msgstr "Palec pravé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:716
+#: panels/user-accounts/cc-fingerprint-dialog.c:649
 msgid "Right middle finger"
 msgstr "Prostředníček pravé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:718
+#: panels/user-accounts/cc-fingerprint-dialog.c:651
 msgid "_Right index finger"
 msgstr "Ukazováček p_ravé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:720
+#: panels/user-accounts/cc-fingerprint-dialog.c:653
 msgid "Right ring finger"
 msgstr "Prsteníček pravé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:722
+#: panels/user-accounts/cc-fingerprint-dialog.c:655
 msgid "Right little finger"
 msgstr "Malíček pravé ruky"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:724
+#: panels/user-accounts/cc-fingerprint-dialog.c:657
 msgid "Unknown Finger"
 msgstr "Neznámý otisk prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:858
+#: panels/user-accounts/cc-fingerprint-dialog.c:791
 msgctxt "Fingerprint enroll state"
 msgid "Complete"
 msgstr "Dokončeno"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:869
+#: panels/user-accounts/cc-fingerprint-dialog.c:802
 msgid "Fingerprint device disconnected"
 msgstr "Čtečka otisků prstů je odpojená"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:875
+#: panels/user-accounts/cc-fingerprint-dialog.c:808
 msgid "Fingerprint device storage is full"
 msgstr "Úložiště čtečky otisku prstů je plné"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:879
+#: panels/user-accounts/cc-fingerprint-dialog.c:812
 msgid "Failed to enroll new fingerprint"
 msgstr "Selhalo sejmutí nového otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:910
+#: panels/user-accounts/cc-fingerprint-dialog.c:843
 #, c-format
 msgid "Failed to start enrollment: %s"
 msgstr "Selhalo započetí snímání: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:918
+#: panels/user-accounts/cc-fingerprint-dialog.c:851
 msgctxt "Fingerprint enroll state"
 msgid "Failed to enroll new fingerprint"
 msgstr "Selhalo sejmutí nového otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:949
+#: panels/user-accounts/cc-fingerprint-dialog.c:882
 #, c-format
 msgid "Failed to stop enrollment: %s"
 msgstr "Selhalo zastavení snímání: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:995
+#: panels/user-accounts/cc-fingerprint-dialog.c:928
 msgid ""
 "Repeatedly lift and place your finger on the reader to enroll your "
 "fingerprint"
@@ -7369,27 +7369,31 @@ msgstr ""
 "Opakovaně zvedněte a přiložte svůj prst ke čtečce, aby se mohl sejmout otisk "
 "prstu."
 
+#: panels/user-accounts/cc-fingerprint-dialog.c:1047
+msgid "_Re-enroll this finger…"
+msgstr "Znovu sejmout tento otisk p_rstu…"
+
 #. TRANSLATORS: This is the label for the button to enroll a new finger
-#: panels/user-accounts/cc-fingerprint-dialog.c:1147
+#: panels/user-accounts/cc-fingerprint-dialog.c:1062
 msgid "Scan new fingerprint"
 msgstr "Sejmout nový otisku prstu"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1185
+#: panels/user-accounts/cc-fingerprint-dialog.c:1100
 #, c-format
 msgid "Failed to release fingerprint device %s: %s"
 msgstr "Selhalo uvolnění čtečky otisku prstu %s: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1257
+#: panels/user-accounts/cc-fingerprint-dialog.c:1172
 msgctxt "Fingerprint enroll state"
 msgid "Problem Reading Device"
 msgstr "Problém při čtení ze zařízení"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1292
+#: panels/user-accounts/cc-fingerprint-dialog.c:1207
 #, c-format
 msgid "Failed to claim fingerprint device %s: %s"
 msgstr "Selhalo vyžádání čtečky otisku prstu %s: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1441
+#: panels/user-accounts/cc-fingerprint-dialog.c:1358
 #, c-format
 msgid "Failed to get fingerprint devices: %s"
 msgstr "Selhalo získání čtečky otisku prstu: %s"
@@ -7430,7 +7434,7 @@ msgstr "%s — %s"
 #. Translators: This is a time format string in the style of "22:58".
 #. It indicates a login time which follows a date.
 #: panels/user-accounts/cc-login-history-dialog.c:179
-#: panels/user-accounts/cc-user-panel.c:688
+#: panels/user-accounts/cc-user-panel.c:712
 msgctxt "login date-time"
 msgid "%k:%M"
 msgstr "%k:%M"
@@ -7438,7 +7442,7 @@ msgstr "%k:%M"
 #. Translators: This indicates a login date-time.
 #. The first %s is a date, and the second %s a time.
 #: panels/user-accounts/cc-login-history-dialog.c:182
-#: panels/user-accounts/cc-user-panel.c:692
+#: panels/user-accounts/cc-user-panel.c:716
 #, c-format
 msgctxt "login date-time"
 msgid "%s, %s"
@@ -7522,26 +7526,26 @@ msgstr "Neplatné heslo, zkuste to, prosím, znovu"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Nelze se připojit k doméně „%s“: %s"
 
-#: panels/user-accounts/cc-user-panel.c:317
+#: panels/user-accounts/cc-user-panel.c:341
 msgid "Failed to delete user"
 msgstr "Selhalo smazání účtu"
 
-#: panels/user-accounts/cc-user-panel.c:374
-#: panels/user-accounts/cc-user-panel.c:429
-#: panels/user-accounts/cc-user-panel.c:475
+#: panels/user-accounts/cc-user-panel.c:398
+#: panels/user-accounts/cc-user-panel.c:453
+#: panels/user-accounts/cc-user-panel.c:499
 msgid "Failed to revoke remotely managed user"
 msgstr "Selhalo zneplatnění vzdáleně spravovaného uživatele"
 
-#: panels/user-accounts/cc-user-panel.c:524
+#: panels/user-accounts/cc-user-panel.c:548
 msgid "You cannot delete your own account."
 msgstr "Nemůžete smazat svůj vlastní účet."
 
-#: panels/user-accounts/cc-user-panel.c:533
+#: panels/user-accounts/cc-user-panel.c:557
 #, c-format
 msgid "%s is still logged in"
 msgstr "Uživatel %s je doposud přihlášen"
 
-#: panels/user-accounts/cc-user-panel.c:537
+#: panels/user-accounts/cc-user-panel.c:561
 msgid ""
 "Deleting a user while they are logged in can leave the system in an "
 "inconsistent state."
@@ -7549,12 +7553,12 @@ msgstr ""
 "Smazání účtu, zatímco je dotyčný uživatel přihlášen, může přivést systém do "
 "nekonzistentního stavu."
 
-#: panels/user-accounts/cc-user-panel.c:546
+#: panels/user-accounts/cc-user-panel.c:570
 #, c-format
 msgid "Do you want to keep %s’s files?"
 msgstr "Chcete zachovat soubory uživatele %s?"
 
-#: panels/user-accounts/cc-user-panel.c:550
+#: panels/user-accounts/cc-user-panel.c:574
 msgid ""
 "It is possible to keep the home directory, mail spool and temporary files "
 "around when deleting a user account."
@@ -7562,69 +7566,69 @@ msgstr ""
 "Je možné zachovat domovskou složku, poštovní schránku a dočasné soubory, i "
 "když bude uživatelský účet smazán."
 
-#: panels/user-accounts/cc-user-panel.c:553
+#: panels/user-accounts/cc-user-panel.c:577
 msgid "_Delete Files"
 msgstr "O_dstranit soubory"
 
-#: panels/user-accounts/cc-user-panel.c:554
+#: panels/user-accounts/cc-user-panel.c:578
 msgid "_Keep Files"
 msgstr "Zacho_vat soubory"
 
-#: panels/user-accounts/cc-user-panel.c:568
+#: panels/user-accounts/cc-user-panel.c:592
 #, c-format
 msgid "Are you sure you want to revoke remotely managed %s’s account?"
 msgstr "Opravdu chcete zneplatnit vzdáleně spravovaný účet uživatele %s?"
 
-#: panels/user-accounts/cc-user-panel.c:572
+#: panels/user-accounts/cc-user-panel.c:596
 msgid "_Delete"
 msgstr "O_dstranit"
 
-#: panels/user-accounts/cc-user-panel.c:622
+#: panels/user-accounts/cc-user-panel.c:646
 msgctxt "Password mode"
 msgid "Account disabled"
 msgstr "Účet zakázán"
 
-#: panels/user-accounts/cc-user-panel.c:630
+#: panels/user-accounts/cc-user-panel.c:654
 msgctxt "Password mode"
 msgid "To be set at next login"
 msgstr "Bude nastaveno při příštím přihlášení"
 
-#: panels/user-accounts/cc-user-panel.c:633
+#: panels/user-accounts/cc-user-panel.c:657
 msgctxt "Password mode"
 msgid "None"
 msgstr "Žádné"
 
-#: panels/user-accounts/cc-user-panel.c:676
+#: panels/user-accounts/cc-user-panel.c:700
 msgid "Logged in"
 msgstr "právě přihlášený"
 
 #. TRANSLATORS: Status of Parental Controls setup
-#: panels/user-accounts/cc-user-panel.c:763
-#: panels/user-accounts/cc-user-panel.c:866
+#: panels/user-accounts/cc-user-panel.c:787
+#: panels/user-accounts/cc-user-panel.c:876
 #: panels/wwan/cc-wwan-device-page.c:476
 msgid "Enabled"
 msgstr "Zapnuto"
 
-#: panels/user-accounts/cc-user-panel.c:1186
+#: panels/user-accounts/cc-user-panel.c:1173
 msgid "Failed to contact the accounts service"
 msgstr "Selhalo kontaktování účtovací služby"
 
-#: panels/user-accounts/cc-user-panel.c:1188
+#: panels/user-accounts/cc-user-panel.c:1175
 msgid "Please make sure that the AccountService is installed and enabled."
 msgstr ""
 "Zkontrolujte prosím, že je účtovací služba AccountService nainstalovaná a "
 "zapnutá."
 
-#: panels/user-accounts/cc-user-panel.c:1209
+#: panels/user-accounts/cc-user-panel.c:1197
 msgid "This panel must be unlocked to change this setting"
 msgstr "Abyste mohli měnit nastavení, je panel zapotřebí odemknout"
 
-#: panels/user-accounts/cc-user-panel.c:1276
+#: panels/user-accounts/cc-user-panel.c:1264
 msgid "Delete the selected user account"
 msgstr "Odstranit vybraný uživatelský účet"
 
-#: panels/user-accounts/cc-user-panel.c:1280
-#: panels/user-accounts/cc-user-panel.c:1389
+#: panels/user-accounts/cc-user-panel.c:1268
+#: panels/user-accounts/cc-user-panel.c:1377
 msgid ""
 "To delete the selected user account,\n"
 "click the * icon first"
@@ -7632,7 +7636,7 @@ msgstr ""
 "Pro odstranění uživatelského účtu\n"
 "nejprve klikněte na ikonu *"
 
-#: panels/user-accounts/cc-user-panel.c:1431
+#: panels/user-accounts/cc-user-panel.c:1423
 msgid "Unlock to Add Users and Change Settings"
 msgstr "Odemkněte, abyste mohli přidávat uživatele a měnit nastavení"
 
@@ -7650,23 +7654,23 @@ msgid "Restart Now"
 msgstr "Restartovat nyní"
 
 #. FIXME
-#: panels/user-accounts/cc-user-panel.ui:188
+#: panels/user-accounts/cc-user-panel.ui:195
 msgid "_Fingerprint Login"
 msgstr "Přihlášení otiskem _prstu"
 
-#: panels/user-accounts/cc-user-panel.ui:211
+#: panels/user-accounts/cc-user-panel.ui:218
 msgid "A_utomatic Login"
 msgstr "A_utomatické přihlašování"
 
-#: panels/user-accounts/cc-user-panel.ui:224
+#: panels/user-accounts/cc-user-panel.ui:231
 msgid "Account Activity"
 msgstr "Aktivita účtu"
 
-#: panels/user-accounts/cc-user-panel.ui:252
+#: panels/user-accounts/cc-user-panel.ui:259
 msgid "_Administrator"
 msgstr "_Správce"
 
-#: panels/user-accounts/cc-user-panel.ui:253
+#: panels/user-accounts/cc-user-panel.ui:260
 msgid ""
 "Administrators can add and remove other users, and can change settings for "
 "all users."
@@ -7674,32 +7678,32 @@ msgstr ""
 "Správce může přidávat a odebírat ostatní uživatele a měnit nastavení u všech "
 "uživatelů."
 
-#: panels/user-accounts/cc-user-panel.ui:269
+#: panels/user-accounts/cc-user-panel.ui:276
 msgid "_Parental Controls"
 msgstr "_Rodičovská kontrola"
 
-#: panels/user-accounts/cc-user-panel.ui:270
+#: panels/user-accounts/cc-user-panel.ui:277
 msgid "Open the Parental Controls application."
 msgstr "Otevřít aplikaci pro rodičovskou kontrolu."
 
-#: panels/user-accounts/cc-user-panel.ui:321
+#: panels/user-accounts/cc-user-panel.ui:328
 msgid "Remove User…"
 msgstr "Odebrat uživatele…"
 
-#: panels/user-accounts/cc-user-panel.ui:333
+#: panels/user-accounts/cc-user-panel.ui:340
 msgid "Other Users"
 msgstr "Ostatní uživatelé"
 
-#: panels/user-accounts/cc-user-panel.ui:346
+#: panels/user-accounts/cc-user-panel.ui:353
 msgid "Add User…"
 msgstr "Přidat uživatele…"
 
 #. Translators: This is the empty state page label which states that there are no users to show in the panel.
-#: panels/user-accounts/cc-user-panel.ui:374
+#: panels/user-accounts/cc-user-panel.ui:381
 msgid "No Users Found"
 msgstr "Žádný uživatel nebyl nalezen"
 
-#: panels/user-accounts/cc-user-panel.ui:383
+#: panels/user-accounts/cc-user-panel.ui:390
 msgid "Unlock to add a user account."
 msgstr "Odemkněte, abyste mohli přidat účet."
 
@@ -8035,6 +8039,14 @@ msgstr ""
 msgid "Calibrate"
 msgstr "Kalibrovat"
 
+#: panels/wacom/cc-wacom-panel.ui:56
+msgid "No tablet detected"
+msgstr "Nenalezen žádný tablet"
+
+#: panels/wacom/cc-wacom-panel.ui:57
+msgid "Please plug in or turn on your Wacom tablet."
+msgstr "Připojte prosím, nebo zapněte, grafický tablet."
+
 #: panels/wacom/cc-wacom-stylus-page.ui:16
 msgid "Tip Pressure Feel"
 msgstr "Pocit z přítlaku hrotu"
@@ -8099,15 +8111,15 @@ msgstr "Přístupové body"
 msgid "APN"
 msgstr "APN"
 
-#: panels/wwan/cc-wwan-data.c:543
+#: panels/wwan/cc-wwan-data.c:542
 msgid "Operation Cancelled"
 msgstr "Operace zrušena"
 
-#: panels/wwan/cc-wwan-data.c:546
+#: panels/wwan/cc-wwan-data.c:545
 msgid "<b>Error:</b> Access denied changing settings"
 msgstr "<b>Chyba:</b> Zamítnut přístup ke změnám nastavení"
 
-#: panels/wwan/cc-wwan-data.c:549
+#: panels/wwan/cc-wwan-data.c:548
 msgid "<b>Error:</b> Mobile Equipment Error"
 msgstr "<b>Chyba:</b> Chyba mobilního zařízení"
 
@@ -8536,23 +8548,7 @@ msgstr "Nástroj pro nastavení uživatelského prostředí GNOME"
 msgid "Settings is the primary interface for configuring your system."
 msgstr "Aplikace Nastavení je hlavním rozhraním pro nastavení vašeho systému."
 
-#: shell/appdata/org.gnome.Settings.appdata.xml.in:17
-msgid "GNOME Settings Sound Panel"
-msgstr "Panel Zvuk v Nastaveních GNOME"
-
-#: shell/appdata/org.gnome.Settings.appdata.xml.in:21
-msgid "GNOME Settings Mouse &amp; Touchpad Panel"
-msgstr "Panel Myš a touchpad v Nastaveních GNOME"
-
-#: shell/appdata/org.gnome.Settings.appdata.xml.in:25
-msgid "GNOME Settings Background Panel"
-msgstr "Panel Pozadí v Nastaveních GNOME"
-
-#: shell/appdata/org.gnome.Settings.appdata.xml.in:29
-msgid "GNOME Settings Keyboard Panel"
-msgstr "Panel Klávesnice v Nastaveních GNOME"
-
-#: shell/appdata/org.gnome.Settings.appdata.xml.in:38
+#: shell/appdata/org.gnome.Settings.appdata.xml.in:34
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -8705,3 +8701,15 @@ msgstr[2] "%u vstupů"
 #: subprojects/gvc/gvc-mixer-control.c:2867
 msgid "System Sounds"
 msgstr "Systémové zvuky"
+
+#~ msgid "GNOME Settings Sound Panel"
+#~ msgstr "Panel Zvuk v Nastaveních GNOME"
+
+#~ msgid "GNOME Settings Mouse &amp; Touchpad Panel"
+#~ msgstr "Panel Myš a touchpad v Nastaveních GNOME"
+
+#~ msgid "GNOME Settings Background Panel"
+#~ msgstr "Panel Pozadí v Nastaveních GNOME"
+
+#~ msgid "GNOME Settings Keyboard Panel"
+#~ msgstr "Panel Klávesnice v Nastaveních GNOME"

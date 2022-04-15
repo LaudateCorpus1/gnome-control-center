@@ -40,6 +40,11 @@ stages:
   meson test -C _build --verbose --no-stdsplit
 
 .fedora.container.common:
+  # As of 2022-03-07 runners not tagged with "crun" have broken seccomp rules
+  # affecting the close_range syscall and breaking g_spawn
+  # Note that "asan" tests are disabled for the same reason, see below.
+  # https://gitlab.gnome.org/Infrastructure/GitLab/-/issues/545
+  tags: [ crun ]
   variables:
     # When branching a stable release, change 'main'
     # to the release number/branch to ensure that
@@ -47,7 +52,7 @@ stages:
     # stable branch.
     # Could probably also switch away from rawhide,
     # to stable fedora branch as well.
-    FDO_DISTRIBUTION_TAG: '2022-01-19.0-main'
+    FDO_DISTRIBUTION_TAG: '2022-03-29.0-main'
     FDO_DISTRIBUTION_VERSION: rawhide
 
 #############################################
@@ -156,6 +161,12 @@ build.container.fedora@x86_64:
         ninja -C _build && \
         ninja -C _build install && \
         cd .. && \
+      git clone https://gitlab.gnome.org/GNOME/libgweather.git && \
+        cd libgweather && \
+        meson . _build --prefix=/usr -Denable_vala=false -Dgtk_doc=false -Dintrospection=false && \
+        ninja -C _build && \
+        ninja -C _build install && \
+        cd .. && \
       git clone https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git && \
         cd gnome-settings-daemon && \
         meson . _build --prefix=/usr && \
@@ -179,7 +190,6 @@ build:
   stage: build
 
   script:
-    - dnf -y install gcr-devel
     - *environment_information
     - *build_procedure
 
@@ -212,7 +222,6 @@ test:
     - build
 
   script:
-    - dnf -y install gcr-devel
     - *environment_information
     - *run_tests
 
@@ -241,7 +250,6 @@ coverage:
     - master@GNOME/gnome-control-center
 
   script:
-    - dnf -y install gcr-devel
     - *environment_information
     - *build_procedure
     - *run_tests
@@ -357,7 +365,6 @@ flatpak:
   stage: manual
   when: manual
   script:
-    - dnf -y install gcr-devel
     - *environment_information
     - *build_procedure
     - *run_tests
@@ -367,18 +374,19 @@ flatpak:
       - $CI_PIPELINE_SOURCE == "schedule"
       - $CI_COMMIT_TITLE =~ /^Update.*translation$/
 
-asan:
-  extends:
-    - '.fdo.distribution-image@fedora'
-    - '.fedora.container.common'
-  <<: *sanitizer
-  # ASAN requires debugging capabilities
-  tags: [ asan ]
-  stage: manual
-  when: manual
-  variables:
-    BUILD_OPTS: "-Db_sanitize=address"
-    LSAN_OPTIONS: "suppressions=${CI_PROJECT_DIR}/build-aux/ci/lsan.supp"
+# Disabled because we currently need "crun" tagged runners, see above
+#asan:
+#  extends:
+#    - '.fdo.distribution-image@fedora'
+#    - '.fedora.container.common'
+#  <<: *sanitizer
+#  # ASAN requires debugging capabilities
+#  tags: [ asan ]
+#  stage: manual
+#  when: manual
+#  variables:
+#    BUILD_OPTS: "-Db_sanitize=address"
+#    LSAN_OPTIONS: "suppressions=${CI_PROJECT_DIR}/build-aux/ci/lsan.supp"
 
 tsan:
   extends:

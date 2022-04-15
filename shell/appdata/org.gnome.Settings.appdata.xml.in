@@ -13,20 +13,16 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source" width="1920" height="1048">https://gitlab.gnome.org/GNOME/gnome-control-center/raw/master/shell/appdata/GNOME_Settings_Sound_Panel.png</image>
-      <caption>GNOME Settings Sound Panel</caption>
+      <image>https://gitlab.gnome.org/GNOME/gnome-control-center/raw/HEAD/shell/appdata/screenshot-appearance.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1920" height="1048">https://gitlab.gnome.org/GNOME/gnome-control-center/raw/master/shell/appdata/GNOME_Settings_Mouse_Panel.png</image>
-      <caption>GNOME Settings Mouse &amp; Touchpad Panel</caption>
+      <image>https://gitlab.gnome.org/GNOME/gnome-control-center/raw/HEAD/shell/appdata/screenshot-sound.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1920" height="1048">https://gitlab.gnome.org/GNOME/gnome-control-center/raw/master/shell/appdata/GNOME_Settings_Background_Panel.png</image>
-      <caption>GNOME Settings Background Panel</caption>
+      <image>https://gitlab.gnome.org/GNOME/gnome-control-center/raw/HEAD/shell/appdata/screenshot-mouse.png</image>
     </screenshot>
     <screenshot>
-      <image type="source" width="1920" height="1048">https://gitlab.gnome.org/GNOME/gnome-control-center/raw/master/shell/appdata/GNOME_Settings_Keyboard_Panel.png</image>
-      <caption>GNOME Settings Keyboard Panel</caption>
+      <image>https://gitlab.gnome.org/GNOME/gnome-control-center/raw/HEAD/shell/appdata/screenshot-keyboard.png</image>
     </screenshot>
   </screenshots>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-control-center/issues/</url>
@@ -34,7 +30,7 @@
   <url type="translate">https://wiki.gnome.org/TranslationProject</url>
   <update_contact>gnomecc-list_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
-  <launchable type="desktop-id">gnome-control-center.desktop</launchable>
+  <launchable type="desktop-id">org.gnome.Settings.desktop</launchable>
   <developer_name>The GNOME Project</developer_name>
   <compulsory_for_desktop>GNOME</compulsory_for_desktop>
   <kudos>

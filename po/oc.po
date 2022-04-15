@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-control-center HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-control-center/"
 "issues\n"
-"POT-Creation-Date: 2022-02-15 22:18+0000\n"
-"PO-Revision-Date: 2022-02-20 19:31+0100\n"
+"POT-Creation-Date: 2022-03-11 12:34+0000\n"
+"PO-Revision-Date: 2022-03-15 10:28+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Tot en òc\n"
 "Language: oc\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-DamnedLies-Scope: partial\n"
 "X-Project-Style: gnome\n"
 
@@ -100,13 +100,13 @@ msgstr ""
 #, c-format
 msgid "%u file and link type that is opened by the app"
 msgid_plural "%u file and link types that are opened by the app"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u tipe de fichièr e ligam dubèrt per l’aplicacion"
+msgstr[1] "%u tipes de fichièr e ligam dubèrts per l’aplicacion"
 
 #: panels/applications/cc-applications-panel.c:1171
 #, c-format
 msgid "<b>%s</b> is used to open the following types of files and links."
-msgstr ""
+msgstr "<b>%s</b> dubrís aquestes tipes de fichièrs e ligams."
 
 #. Translators: '%s' is the formatted size, e.g. "26.2 MB"
 #: panels/applications/cc-applications-panel.c:1223
@@ -149,7 +149,7 @@ msgstr "Recercar"
 #: panels/applications/cc-applications-panel.ui:113
 #: panels/applications/cc-applications-panel.ui:120
 msgid "Receive system searches and send results."
-msgstr ""
+msgstr "Recebre las recèrcas sistèma e enviar los resultats."
 
 #. This label is displayed in a treeview cell displaying
 #. * a disabled accelerator key combination.
@@ -165,8 +165,8 @@ msgstr ""
 #: panels/keyboard/cc-keyboard-shortcut-editor.ui:118
 #: panels/keyboard/cc-xkb-modifier-dialog.c:344
 #: panels/keyboard/keyboard-shortcuts.c:367 panels/network/network-proxy.ui:105
-#: panels/user-accounts/cc-user-panel.c:765
-#: panels/user-accounts/cc-user-panel.c:870
+#: panels/user-accounts/cc-user-panel.c:789
+#: panels/user-accounts/cc-user-panel.c:879
 #: panels/wwan/cc-wwan-device-page.c:478
 #: subprojects/gvc/gvc-mixer-control.c:1900
 msgid "Disabled"
@@ -178,10 +178,8 @@ msgid "Notifications"
 msgstr "Notificacions"
 
 #: panels/applications/cc-applications-panel.ui:127
-#, fuzzy
-#| msgid "Show _Notifications"
 msgid "Show system notifications."
-msgstr "Afichar las _notificacions"
+msgstr "Afichar las notificacions sistèma"
 
 #: panels/applications/cc-applications-panel.ui:133
 msgid "Run in background"
@@ -189,17 +187,15 @@ msgstr "Executar en rèireplan"
 
 #: panels/applications/cc-applications-panel.ui:134
 msgid "Allow activity when the app is closed."
-msgstr ""
+msgstr "Permetre l’activitat quand l’aplicacion es tampada."
 
 #: panels/applications/cc-applications-panel.ui:140
 msgid "Change Wallpaper"
 msgstr "Cambiar lo rèireplan"
 
 #: panels/applications/cc-applications-panel.ui:141
-#, fuzzy
-#| msgid "preferences-desktop-wallpaper"
 msgid "Change the desktop wallpaper."
-msgstr "preferences-desktop-wallpaper"
+msgstr "Modificar lo rèireplan."
 
 #: panels/applications/cc-applications-panel.ui:147
 #: panels/applications/cc-applications-panel.ui:154
@@ -209,19 +205,15 @@ msgstr "Sons"
 #: panels/applications/cc-applications-panel.ui:148
 #: panels/applications/cc-applications-panel.ui:155
 msgid "Reproduce sounds."
-msgstr ""
+msgstr "Legir los sons."
 
 #: panels/applications/cc-applications-panel.ui:161
-#, fuzzy
-#| msgid "Set Shortcut"
 msgid "Inhibit Shortcuts"
-msgstr "Definir un acorchi"
+msgstr "Ignorar los acorchis"
 
 #: panels/applications/cc-applications-panel.ui:162
-#, fuzzy
-#| msgid "Inhibit system keyboard shortcuts"
 msgid "Block standard keyboard shortcuts."
-msgstr "Ignorar los acorchis clavièr del sistèma"
+msgstr "Blocar los acorchis clavièr del sistèma estandard."
 
 #: panels/applications/cc-applications-panel.ui:168
 #: panels/applications/cc-applications-panel.ui:175
@@ -262,14 +254,12 @@ msgid "Built-in Permissions"
 msgstr "Permissions integradas"
 
 #: panels/applications/cc-applications-panel.ui:216
-#, fuzzy
-#| msgid "System features used by this application."
 msgid "System access that is required by the app"
-msgstr "Foncionalitats sistèma utilizadas per aquesta application."
+msgstr "L’accès sistèma es requerit per l’aplicacion"
 
 #: panels/applications/cc-applications-panel.ui:224
 msgid "File &amp; Link Associations"
-msgstr ""
+msgstr "Fichièr e associacions"
 
 #: panels/applications/cc-applications-panel.ui:232
 #: panels/applications/cc-applications-panel.ui:399
@@ -288,17 +278,15 @@ msgstr "Ensajatz una autra recèrca"
 
 #: panels/applications/cc-applications-panel.ui:344
 msgid "File & Link Associations"
-msgstr ""
+msgstr "Fichièr e associacions"
 
 #: panels/applications/cc-applications-panel.ui:367
 msgid "File Types"
 msgstr "Tipes de fichièr"
 
 #: panels/applications/cc-applications-panel.ui:373
-#, fuzzy
-#| msgid "Link speed"
 msgid "Link Types"
-msgstr "Velocitat de la connexion"
+msgstr "Tipes de ligam"
 
 #: panels/applications/cc-applications-panel.ui:383
 msgid "Reset"
@@ -348,7 +336,7 @@ msgstr "Seleccionar un imatge"
 #: panels/color/cc-color-calibrate.ui:22 panels/color/cc-color-panel.c:284
 #: panels/color/cc-color-panel.c:844 panels/common/cc-language-chooser.ui:21
 #: panels/display/cc-display-panel.ui:31
-#: panels/info-overview/cc-info-overview-panel.ui:197
+#: panels/info-overview/cc-info-overview-panel.ui:198
 #: panels/keyboard/cc-input-chooser.ui:11
 #: panels/network/cc-wifi-hotspot-dialog.ui:123
 #: panels/network/cc-wifi-panel.c:881
@@ -360,14 +348,14 @@ msgstr "Seleccionar un imatge"
 #: panels/printers/pp-details-dialog.c:263
 #: panels/region/cc-format-chooser.ui:24
 #: panels/search/cc-search-locations-dialog.c:677
-#: panels/sharing/cc-sharing-panel.c:432 panels/usage/cc-usage-panel.c:139
+#: panels/sharing/cc-sharing-panel.c:523 panels/usage/cc-usage-panel.c:139
 #: panels/user-accounts/cc-add-user-dialog.ui:25
-#: panels/user-accounts/cc-avatar-chooser.c:94
-#: panels/user-accounts/cc-avatar-chooser.c:165
-#: panels/user-accounts/cc-fingerprint-dialog.ui:30
+#: panels/user-accounts/cc-avatar-chooser.c:96
+#: panels/user-accounts/cc-avatar-chooser.c:167
+#: panels/user-accounts/cc-fingerprint-dialog.ui:32
 #: panels/user-accounts/cc-password-dialog.ui:18
-#: panels/user-accounts/cc-user-panel.c:555
-#: panels/user-accounts/cc-user-panel.c:573
+#: panels/user-accounts/cc-user-panel.c:579
+#: panels/user-accounts/cc-user-panel.c:597
 #: panels/user-accounts/data/join-dialog.ui:17
 #: panels/wwan/cc-wwan-mode-dialog.ui:32
 #: panels/wwan/cc-wwan-network-dialog.ui:139
@@ -378,8 +366,8 @@ msgstr "_Anullar"
 #: panels/background/cc-background-chooser.c:311
 #: panels/network/connection-editor/vpn-helpers.c:227
 #: panels/printers/pp-details-dialog.c:264
-#: panels/sharing/cc-sharing-panel.c:433
-#: panels/user-accounts/cc-avatar-chooser.c:166
+#: panels/sharing/cc-sharing-panel.c:524
+#: panels/user-accounts/cc-avatar-chooser.c:168
 msgid "_Open"
 msgstr "_Dobrir"
 
@@ -396,7 +384,7 @@ msgstr "%d × %d"
 
 #: panels/background/cc-background-item.c:325
 msgid "No Desktop Background"
-msgstr "Pas cap de rèireplan de Burèu"
+msgstr "Pas cap de rèireplan de burèu"
 
 #: panels/background/cc-background-panel.c:227
 msgid "Current background"
@@ -453,8 +441,6 @@ msgstr ""
 "Activatz per connectar de periferics e recebre de transferiments de fichièrs."
 
 #: panels/bluetooth/cc-bluetooth-panel.ui:35
-#, fuzzy
-#| msgid "Airplane Mode is on"
 msgid "Airplane Mode is On"
 msgstr "Mòde avion activat"
 
@@ -467,10 +453,8 @@ msgid "Turn Off Airplane Mode"
 msgstr "Desactivar lo mòde avion"
 
 #: panels/bluetooth/cc-bluetooth-panel.ui:53
-#, fuzzy
-#| msgid "Hardware Airplane Mode is on"
 msgid "Hardware Airplane Mode is On"
-msgstr "Mòde avion activat"
+msgstr "Mòde avion material activat"
 
 #: panels/bluetooth/cc-bluetooth-panel.ui:54
 msgid "Turn off the Airplane mode switch to enable Bluetooth."
@@ -492,8 +476,6 @@ msgid "share;sharing;bluetooth;obex;"
 msgstr "partiment;partejar;bluetooth;obex;"
 
 #: panels/camera/cc-camera-panel.ui:21
-#, fuzzy
-#| msgid "Camera is turned off"
 msgid "Camera is Turned Off"
 msgstr "La camèra es inactiva"
 
@@ -502,19 +484,17 @@ msgid "No applications can capture photos or video."
 msgstr "Cap d’aplicacion pòt pas capturar de fotografias o vidèos."
 
 #: panels/camera/cc-camera-panel.ui:36
-#, fuzzy
-#| msgid ""
-#| "Use of the camera allows applications to capture photos and video. "
-#| "Disabling the camera may cause some applications to not function properly."
 msgid ""
 "Use of the camera allows applications to capture photos and video. Disabling "
 "the camera may cause some applications to not function properly.\n"
 "\n"
 "Allow the applications below to use your camera."
 msgstr ""
-"L’utilizacion de la camèra permet a las aplicacions de prene de fòtos e de "
+"L’utilizacion de la camèra permet a las aplicacions de prendre de fòtos e de "
 "vidèos. En la desactivant, es possible que certanas aplicacions foncionen "
-"pas corrèctament."
+"pas corrèctament.\n"
+"\n"
+"Autoriatz las aplicacions çai-jos a utilizar la camèra."
 
 #: panels/camera/cc-camera-panel.ui:52
 msgid "No Applications Have Asked for Camera Access"
@@ -631,7 +611,7 @@ msgstr "_Reprene"
 
 #. This button returns the user back to the color control panel
 #: panels/color/cc-color-calibrate.ui:40 panels/region/cc-format-chooser.ui:49
-#: panels/user-accounts/cc-fingerprint-dialog.ui:58
+#: panels/user-accounts/cc-fingerprint-dialog.ui:60
 msgid "_Done"
 msgstr "_Acabat"
 
@@ -701,13 +681,13 @@ msgstr "Per defaut : "
 #. * profile his a standard space like AdobeRGB
 #: panels/color/cc-color-panel.c:168
 msgid "Colorspace: "
-msgstr "Espaci de colors : "
+msgstr "Espaci colorimetric : "
 
 #. TRANSLATORS: this is a profile prefix to signify the
 #. * profile is a test profile
 #: panels/color/cc-color-panel.c:175
 msgid "Test profile: "
-msgstr "Perfil tèst : "
+msgstr "Perfil de pròva : "
 
 #. TRANSLATORS: an ICC profile is a file containing colorspace data
 #: panels/color/cc-color-panel.c:282
@@ -1064,7 +1044,7 @@ msgstr "Espaci de colors estandard"
 #. * a different color, or swap the red and green channels
 #: panels/color/cc-color-profile.c:104
 msgid "Test Profile"
-msgstr "Perfil tèst"
+msgstr "Perfil de pròva"
 
 #. TRANSLATORS: automatic profiles are generated automatically
 #. * by the color management system based on manufacturing data,
@@ -1129,7 +1109,7 @@ msgstr ""
 
 #: panels/color/cc-color-profile.c:219
 msgid "This profile may no longer be accurate"
-msgstr "Benlèu qu'aqueste perfil es pas pus precís"
+msgstr "Benlèu qu'aqueste perfil es pas mai precís"
 
 #: panels/color/gnome-color-panel.desktop.in.in:3
 msgid "Color"
@@ -1218,7 +1198,7 @@ msgstr "%b %e"
 #. Translators: This is a date format string in the style of "Feb 24, 2013".
 #: panels/common/cc-util.c:143
 msgid "%b %e, %Y"
-msgstr "%b %e, %Y"
+msgstr "%e %b, %Y"
 
 #: panels/common/cc-util.c:165
 #, c-format
@@ -1299,12 +1279,12 @@ msgstr "AM / PM"
 #. Translators: This is the full date and time format used in 12-hour mode.
 #: panels/datetime/cc-datetime-panel.c:248
 msgid "%e %B %Y, %l:%M %p"
-msgstr "%e %B %Y, %l:%M %p"
+msgstr "%e %B de %Y, %l:%M %p"
 
 #. Translators: This is the full date and time format used in 24-hour mode.
 #: panels/datetime/cc-datetime-panel.c:253
 msgid "%e %B %Y, %R"
-msgstr "%e %B %Y, %R"
+msgstr "%e %B de %Y, %R"
 
 #. Translators: "city, country"
 #: panels/datetime/cc-datetime-panel.c:423
@@ -1582,10 +1562,8 @@ msgid "_Apply"
 msgstr "_Aplicar"
 
 #: panels/display/cc-display-panel.ui:97
-#, fuzzy
-#| msgid "Bluetooth is disabled"
 msgid "Display Settings Disabled"
-msgstr "Lo Bluetooth es desactivat"
+msgstr "Paramètres d'afichatge desactivats"
 
 #: panels/display/cc-display-panel.ui:113
 msgid "Display Arrangement"
@@ -1598,7 +1576,7 @@ msgstr "Ecrans multiples"
 #. 'Join' as in 'Join displays'
 #: panels/display/cc-display-panel.ui:133
 msgid "Join"
-msgstr ""
+msgstr "Fusionar"
 
 #: panels/display/cc-display-panel.ui:140
 msgid "Mirror"
@@ -1715,7 +1693,7 @@ msgstr "ora"
 #: panels/display/cc-night-light-page.ui:154
 #: panels/display/cc-night-light-page.ui:241
 msgid ":"
-msgstr ":"
+msgstr " :"
 
 #: panels/display/cc-night-light-page.ui:171
 #: panels/display/cc-night-light-page.ui:258
@@ -1744,7 +1722,7 @@ msgstr "Temperatura de color"
 
 #: panels/display/gnome-display-panel.desktop.in.in:3
 msgid "Displays"
-msgstr "Ec­rans"
+msgstr "Afichatge"
 
 #: panels/display/gnome-display-panel.desktop.in.in:4
 msgid "Choose how to use connected monitors and projectors"
@@ -1807,6 +1785,7 @@ msgid "System Logo"
 msgstr "Logotipe sistèma"
 
 #: panels/info-overview/cc-info-overview-panel.ui:32
+#: panels/sharing/cc-sharing-panel.ui:299
 msgid "Device Name"
 msgstr "Nom del periferic"
 
@@ -1824,7 +1803,7 @@ msgstr "Processor"
 
 #: panels/info-overview/cc-info-overview-panel.ui:74
 msgid "Graphics"
-msgstr "Carta grafica"
+msgstr "Grafisme"
 
 #: panels/info-overview/cc-info-overview-panel.ui:82
 msgid "Disk Capacity"
@@ -1871,7 +1850,7 @@ msgstr ""
 "Lo nom del periferic es utilizat per identificar quand es visible sus la "
 "ret, o en espèra d’associacion amb de periferics Bluetooth."
 
-#: panels/info-overview/cc-info-overview-panel.ui:189
+#: panels/info-overview/cc-info-overview-panel.ui:190
 msgid "_Rename"
 msgstr "_Tornar nomenar"
 
@@ -1923,7 +1902,7 @@ msgstr "Aviar lo lector multimèdia"
 
 #: panels/keyboard/00-multimedia.xml.in:14
 msgid "Play (or play/pause)"
-msgstr "Legir (o legir/arrestar)"
+msgstr "Lectura (o Lectura/Pausa)"
 
 #: panels/keyboard/00-multimedia.xml.in:16
 msgid "Pause playback"
@@ -2079,9 +2058,9 @@ msgstr "Veire l’agençament del clavièr"
 msgid "Remove"
 msgstr "Suprimir"
 
-#: panels/keyboard/cc-keyboard-manager.c:483
-#: panels/keyboard/cc-keyboard-manager.c:491
-#: panels/keyboard/cc-keyboard-manager.c:757
+#: panels/keyboard/cc-keyboard-manager.c:485
+#: panels/keyboard/cc-keyboard-manager.c:493
+#: panels/keyboard/cc-keyboard-manager.c:922
 msgid "Custom Shortcuts"
 msgstr "Acorchis personalizats"
 
@@ -2238,7 +2217,6 @@ msgstr ""
 #: panels/keyboard/cc-keyboard-shortcut-dialog.c:467
 #: panels/keyboard/cc-keyboard-shortcut-editor.ui:23
 #: panels/network/wireless-security/ws-file-chooser-button.c:94
-#: panels/printers/authentication-dialog.ui:19
 #: panels/printers/ppd-selection-dialog.ui:83
 #: panels/wwan/cc-wwan-device-page.c:189
 msgid "Cancel"
@@ -2323,7 +2301,7 @@ msgstr ""
 #: panels/keyboard/cc-keyboard-shortcut-editor.ui:153
 #: panels/printers/pp-details-dialog.ui:39
 #: panels/user-accounts/cc-add-user-dialog.ui:68
-#: panels/user-accounts/cc-user-panel.ui:125
+#: panels/user-accounts/cc-user-panel.ui:132
 #: panels/wwan/cc-wwan-apn-dialog.ui:96
 msgid "Name"
 msgstr "Nom"
@@ -2369,8 +2347,6 @@ msgstr ""
 "Verrolhar;Volum;"
 
 #: panels/location/cc-location-panel.ui:20
-#, fuzzy
-#| msgid "Location services turned off"
 msgid "Location Services Turned Off"
 msgstr "Servici de lozalicion desactivat"
 
@@ -2388,6 +2364,13 @@ msgid ""
 "\n"
 "Allow the applications below to determine your location."
 msgstr ""
+"Los servicis de localizacion permeton a las aplicacions de conéisser vòstra "
+"posicion. L’utilizacion del WI-FI e del ret mobil aumenta la precision.\n"
+"\n"
+"Emplega lo servici de localizacion de Mozilla : <a href='https://location."
+"services.mozilla.com/privacy'>Politica de confidencialitat</a>\n"
+"\n"
+"Permet a las aplicacions seguentas de determinar vòstra posicion."
 
 #: panels/location/cc-location-panel.ui:53
 msgid "No Applications Have Asked for Location Access"
@@ -2555,8 +2538,6 @@ msgstr "Verrolhar l'ecran"
 
 #. FIXME
 #: panels/microphone/cc-microphone-panel.ui:20
-#, fuzzy
-#| msgid "Microphone is turned off"
 msgid "Microphone Turned Off"
 msgstr "Lo microfòn es inactiu"
 
@@ -2565,11 +2546,6 @@ msgid "No applications can record sound."
 msgstr "Cap d’aplicacion pòt pas enregistrar de son."
 
 #: panels/microphone/cc-microphone-panel.ui:34
-#, fuzzy
-#| msgid ""
-#| "Use of the microphone allows applications to record and listen to audio. "
-#| "Disabling the microphone may cause some applications to not function "
-#| "properly."
 msgid ""
 "Use of the microphone allows applications to record and listen to audio. "
 "Disabling the microphone may cause some applications to not function "
@@ -2578,8 +2554,10 @@ msgid ""
 "Allow the applications below to use your microphone."
 msgstr ""
 "L’utilizacion del microfòn permet a las aplicacions d’enregistrar e "
-"d’escotar de l’àudio. En lo desactivant, poiriá arribar que d’unas "
-"aplicacions foncionen pas corrèctament."
+"d’escotar de l’àudio. En lo desactivant, es possible que certanas "
+"aplicacions foncionen pas corrèctament.\n"
+"\n"
+"Autoriatz las aplicacions çai-jos a utilizar lo microfòn."
 
 #: panels/microphone/cc-microphone-panel.ui:51
 msgid "No Applications Have Asked for Microphone Access"
@@ -2884,9 +2862,8 @@ msgstr "Nom de la ret"
 
 #. Translators: This is a password needed for printing.
 #: panels/network/cc-wifi-hotspot-dialog.ui:74
-#: panels/printers/authentication-dialog.ui:55
 #: panels/printers/new-printer-dialog.ui:331
-#: panels/printers/pp-jobs-dialog.ui:52
+#: panels/printers/pp-jobs-dialog.ui:52 panels/sharing/cc-sharing-panel.ui:376
 #: panels/user-accounts/cc-add-user-dialog.ui:145
 #: panels/user-accounts/cc-add-user-dialog.ui:181
 #: panels/user-accounts/cc-add-user-dialog.ui:362
@@ -3595,7 +3572,7 @@ msgstr ""
 #. * through them.
 #: panels/network/net-proxy.c:120
 msgid "This is not recommended for untrusted public networks."
-msgstr "Aquò's pas recomandat per de rets publicas pas fisablas."
+msgstr "Aquò es pas recomandat per de rets publicas pas seguras."
 
 #: panels/network/network-bluetooth.ui:11
 msgid "Turn device off"
@@ -4040,7 +4017,7 @@ msgstr "Nom d'_utilizaire"
 #: panels/network/wireless-security/ws-sae.ui:10
 #: panels/network/wireless-security/ws-wpa-psk.ui:10
 #: panels/sharing/cc-sharing-panel.ui:152
-#: panels/user-accounts/cc-user-panel.ui:168
+#: panels/user-accounts/cc-user-panel.ui:175
 msgid "_Password"
 msgstr "Se_nhal"
 
@@ -4782,7 +4759,7 @@ msgstr "Estalviador d'energia automatic"
 
 #: panels/power/cc-power-panel.ui:160
 msgid "Enables power saver mode when battery is low."
-msgstr "Activar l’estalviador d’energia quand la batariá es febla."
+msgstr "Activa l’estalviador d’energia quand la batariá es febla."
 
 #: panels/power/cc-power-panel.ui:173
 msgid "_Automatic Suspend"
@@ -4863,29 +4840,6 @@ msgstr ""
 "energia;alimentacion;velha;suspension;susprendre;ivernacion;batariá;"
 "luminositat;negre;ecran;DPMS;inactiu;som;dormir;"
 
-#: panels/printers/authentication-dialog.ui:9
-msgid " "
-msgstr " "
-
-#: panels/printers/authentication-dialog.ui:24
-msgid "Authenticate"
-msgstr "Autentificacion"
-
-#. Translators: This is a username on a print server.
-#: panels/printers/authentication-dialog.ui:41
-#: panels/printers/new-printer-dialog.ui:311
-#: panels/printers/pp-jobs-dialog.ui:41
-#: panels/user-accounts/cc-add-user-dialog.ui:94
-#: panels/user-accounts/cc-add-user-dialog.ui:342
-#: panels/wwan/cc-wwan-apn-dialog.ui:148
-msgid "Username"
-msgstr "Nom d'utilizaire"
-
-#: panels/printers/authentication-dialog.ui:92
-#: panels/printers/new-printer-dialog.ui:286
-msgid "Authentication Required"
-msgstr "Autentificacion requesida"
-
 #. Translators: %s is the printer name
 #: panels/printers/cc-printers-panel.c:676
 #, c-format
@@ -4947,11 +4901,24 @@ msgstr "Cap d'imprimenta pas trobada"
 msgid "Enter a network address or search for a printer"
 msgstr "Picatz l'adreça d'una ret o recercatz una imprimenta"
 
+#: panels/printers/new-printer-dialog.ui:286
+msgid "Authentication Required"
+msgstr "Autentificacion requesida"
+
 #: panels/printers/new-printer-dialog.ui:302
 msgid "Enter username and password to view printers on Print Server."
 msgstr ""
 "Picatz vòstre nom d’utilizaire e vòstre senhal per afichar las imprimentas "
 "sul servidor."
+
+#. Translators: This is a username on a print server.
+#: panels/printers/new-printer-dialog.ui:311
+#: panels/printers/pp-jobs-dialog.ui:41
+#: panels/user-accounts/cc-add-user-dialog.ui:94
+#: panels/user-accounts/cc-add-user-dialog.ui:342
+#: panels/wwan/cc-wwan-apn-dialog.ui:148
+msgid "Username"
+msgstr "Nom d'utilizaire"
 
 #. Translators: This is the title of the dialog. %s is the printer name.
 #: panels/printers/pp-details-dialog.c:74
@@ -5011,7 +4978,7 @@ msgid "Loading drivers database…"
 msgstr "Cargament de la basa de donadas dels pilòts…"
 
 #: panels/printers/ppd-selection-dialog.ui:91
-#: panels/user-accounts/cc-avatar-chooser.c:96
+#: panels/user-accounts/cc-avatar-chooser.c:98
 msgid "Select"
 msgstr "Seleccionar"
 
@@ -5311,12 +5278,12 @@ msgstr "Avançat"
 #: panels/printers/pp-options-dialog.c:844
 #: panels/printers/pp-options-dialog.ui:14
 msgid "Test Page"
-msgstr "Pagina de tèst"
+msgstr "Pagina de pròva"
 
 #. Translators: Name of job which makes printer to print test page
 #: panels/printers/pp-options-dialog.c:857
 msgid "Test page"
-msgstr "Pagina de tèst"
+msgstr "Pagina de pròva"
 
 #. Translators: this is an option of "Paper Source"
 #: panels/printers/pp-ppd-option-widget.c:75
@@ -5413,7 +5380,7 @@ msgstr "Cartocha de color voida"
 #. Translators: One or more covers on the printer are open
 #: panels/printers/pp-printer-entry.c:733
 msgid "Open cover"
-msgstr "Cobertor dobèrt"
+msgstr " Tapador dobèrt"
 
 #. Translators: One or more doors on the printer are open
 #: panels/printers/pp-printer-entry.c:735
@@ -5447,12 +5414,12 @@ msgstr "Arrestada"
 #. Translators: The printer marker supply waste receptacle is almost full
 #: panels/printers/pp-printer-entry.c:745
 msgid "Waste receptacle almost full"
-msgstr "Recipient de degalhs gaireben plen"
+msgstr " Recipient de descais gaireben plen"
 
 #. Translators: The printer marker supply waste receptacle is full
 #: panels/printers/pp-printer-entry.c:747
 msgid "Waste receptacle full"
-msgstr "Recipient de degalhs plen"
+msgstr "Recipient de descais plen"
 
 #. Translators: Optical photo conductors are used in laser printers
 #: panels/printers/pp-printer-entry.c:749
@@ -5611,26 +5578,26 @@ msgstr "Papièr"
 
 #: panels/region/cc-region-panel.ui:19
 msgid "Language and format will be changed after next login"
-msgstr ""
+msgstr "La lenga e lo format seràn cambiats a la connexion venenta"
 
 #: panels/region/cc-region-panel.ui:29
 msgid "Logout…"
 msgstr "Desconnexion…"
 
 #: panels/region/cc-region-panel.ui:45
-#, fuzzy
-#| msgid "The format used for numbers, dates, and currencies."
 msgid ""
 "The language setting is used for interface text and web pages. Formats is "
 "used for numbers, dates, and currencies."
-msgstr "Lo format utilizat pels nombres, datas e las devisas."
+msgstr ""
+"Lo parametratge lingüistic servís pels tèxtes de l’interfàcia e las paginas "
+"web. Lo format utilizat pels nombres, datas e las devisas."
 
 #: panels/region/cc-region-panel.ui:51
 msgid "Your Account"
 msgstr "Vòstre compte"
 
 #: panels/region/cc-region-panel.ui:56 panels/region/cc-region-panel.ui:95
-#: panels/user-accounts/cc-user-panel.ui:292
+#: panels/user-accounts/cc-user-panel.ui:299
 msgid "_Language"
 msgstr "_Lenga"
 
@@ -5704,19 +5671,19 @@ msgstr "DVD àudio"
 
 #: panels/removable-media/cc-removable-media-panel.c:369
 msgid "blank Blu-ray disc"
-msgstr "disc Blu-ray verge"
+msgstr "Disc Blu-ray verge"
 
 #: panels/removable-media/cc-removable-media-panel.c:370
 msgid "blank CD disc"
-msgstr "disc CD verge"
+msgstr "CD verge"
 
 #: panels/removable-media/cc-removable-media-panel.c:371
 msgid "blank DVD disc"
-msgstr "disc DVD verge"
+msgstr "DVD verge"
 
 #: panels/removable-media/cc-removable-media-panel.c:372
 msgid "blank HD DVD disc"
-msgstr "disc HD DVD verge"
+msgstr "Disc HD DVD verge"
 
 #: panels/removable-media/cc-removable-media-panel.c:373
 msgid "Blu-ray video disc"
@@ -5732,11 +5699,11 @@ msgstr "disc vidèo HD DVD"
 
 #: panels/removable-media/cc-removable-media-panel.c:376
 msgid "Picture CD"
-msgstr "Picture CD"
+msgstr "Cd d’imatges"
 
 #: panels/removable-media/cc-removable-media-panel.c:377
 msgid "Super Video CD"
-msgstr "Super Vidèo CD"
+msgstr "Super CD Vidèo"
 
 #: panels/removable-media/cc-removable-media-panel.c:378
 msgid "Video CD"
@@ -5837,36 +5804,24 @@ msgid "Others"
 msgstr "Autres"
 
 #: panels/search/cc-search-locations-dialog.ui:55
-#, fuzzy
-#| msgid "Location"
 msgid "Add Location"
-msgstr "Emplaçament"
+msgstr "Apondre un emplaçament"
 
 #: panels/search/cc-search-panel.c:165
 msgid "No applications found"
 msgstr "Cap d'aplicacion pas trobada"
 
 #: panels/search/cc-search-panel.ui:10
-#, fuzzy
-#| msgid "Application Switching"
 msgid "Application Search"
-msgstr "Alternància entre aplicacions"
+msgstr "Recèrca d'aplicacions"
 
 #: panels/search/cc-search-panel.ui:11
-#, fuzzy
-#| msgid "Include applications from all _workspaces"
 msgid "Include application-provided search results."
-msgstr "Inclure totas las aplicacions dels _espacis de trabalhs estant"
+msgstr "Inclure los resultats de recèrca provesits per l’aplicacion."
 
 #: panels/search/cc-search-panel.ui:23
-#, fuzzy
-#| msgid ""
-#| "Folders which are searched by system applications, such as Files, Photos "
-#| "and Videos."
 msgid "Folders which are searched by system applications."
-msgstr ""
-"Dorsièrs recercats per las aplicacions sistèmas, tals coma Fichièrs, Fòtos e "
-"Vidèos."
+msgstr "Dorsièrs recercats per las aplicacions sistèmas."
 
 #: panels/search/cc-search-panel.ui:37
 msgid "Search Results"
@@ -5874,7 +5829,7 @@ msgstr "Resultats de la recèrca"
 
 #: panels/search/cc-search-panel.ui:38
 msgid "Results are displayed according to the list order."
-msgstr ""
+msgstr "Los resultats son afichats segon l’òrdre de la lista."
 
 #: panels/search/gnome-search-panel.desktop.in.in:4
 msgid ""
@@ -5897,32 +5852,32 @@ msgstr "Cap de ret de partiment es pas seleccionada"
 msgid "Networks"
 msgstr "Rets"
 
-#: panels/sharing/cc-sharing-panel.c:276
+#: panels/sharing/cc-sharing-panel.c:367
 msgctxt "service is enabled"
 msgid "On"
 msgstr "I"
 
-#: panels/sharing/cc-sharing-panel.c:278 panels/sharing/cc-sharing-panel.c:305
+#: panels/sharing/cc-sharing-panel.c:369 panels/sharing/cc-sharing-panel.c:396
 msgctxt "service is disabled"
 msgid "Off"
 msgstr "O"
 
-#: panels/sharing/cc-sharing-panel.c:308
+#: panels/sharing/cc-sharing-panel.c:399
 msgctxt "service is enabled"
 msgid "Enabled"
 msgstr "Activat"
 
-#: panels/sharing/cc-sharing-panel.c:311
+#: panels/sharing/cc-sharing-panel.c:402
 msgctxt "service is active"
 msgid "Active"
 msgstr "Actiu"
 
-#: panels/sharing/cc-sharing-panel.c:429
+#: panels/sharing/cc-sharing-panel.c:520
 msgid "Choose a Folder"
 msgstr "Causir un dorsièr"
 
 #. TRANSLATORS: %s is replaced with a link to a dav://<hostname> URL
-#: panels/sharing/cc-sharing-panel.c:657
+#: panels/sharing/cc-sharing-panel.c:748
 #, c-format
 msgid ""
 "File Sharing allows you to share your Public folder with others on your "
@@ -5932,7 +5887,7 @@ msgstr ""
 "los autres sus la ret actuala en utilizant  : %s"
 
 #. TRANSLATORS: %s is replaced with a link to a "ssh <hostname>" command to run
-#: panels/sharing/cc-sharing-panel.c:663
+#: panels/sharing/cc-sharing-panel.c:754
 #, c-format
 msgid ""
 "When remote login is enabled, remote users can connect using the Secure "
@@ -5942,16 +5897,6 @@ msgstr ""
 "Quand la connexion distanta es activada, los utilizaires distants se pòdon "
 "connectar en utilizant la comanda Shell securizada :\n"
 "%s"
-
-#. TRANSLATORS: %s is replaced with a link to a vnc://<hostname> URL
-#: panels/sharing/cc-sharing-panel.c:669
-#, c-format
-msgid ""
-"Screen sharing allows remote users to view or control your screen by "
-"connecting to %s"
-msgstr ""
-"Lo partiment d’ecran permet als utilizaires distants de veire o contrarotlar "
-"vòstre ecran en se connectant a %s"
 
 #: panels/sharing/cc-sharing-panel.ui:9
 #: panels/sharing/gnome-sharing-panel.desktop.in.in:3
@@ -5967,8 +5912,8 @@ msgid "_File Sharing"
 msgstr "Partiment de _fichièrs"
 
 #: panels/sharing/cc-sharing-panel.ui:65
-msgid "_Screen Sharing"
-msgstr "Partiment _de l'ecran"
+msgid "Remote _Desktop"
+msgstr "Burèu _distant"
 
 #: panels/sharing/cc-sharing-panel.ui:72
 msgid "_Media Sharing"
@@ -5992,42 +5937,83 @@ msgid "Remote Login"
 msgstr "Connexion distanta"
 
 #: panels/sharing/cc-sharing-panel.ui:250
-msgid "Screen Sharing"
-msgstr "Partiment de l'ecran"
+#: panels/sharing/cc-sharing-panel.ui:267
+msgid "Remote Desktop"
+msgstr "Burèu distant"
 
-#: panels/sharing/cc-sharing-panel.ui:298
-msgid "_Allow connections to control the screen"
-msgstr "_Autorizar los connectats a controlar l’ecran"
+#: panels/sharing/cc-sharing-panel.ui:263
+msgid ""
+"Remote desktop allows viewing and controlling your desktop from another "
+"computer."
+msgstr ""
+"Lo burèu a distància permet de visualizar e controlar lo burèu a partir d’un "
+"autre ordenador."
 
-#: panels/sharing/cc-sharing-panel.ui:316
-msgid "_Password:"
-msgstr "Se_nhal :"
+#: panels/sharing/cc-sharing-panel.ui:268
+msgid "Enable or disable remote desktop connections to this computer."
+msgstr "Activar o desactivar una connexion distanta a aqueste ordenador."
 
-#: panels/sharing/cc-sharing-panel.ui:339
-msgid "_Show Password"
-msgstr "_Afichar lo senhal"
+#: panels/sharing/cc-sharing-panel.ui:280
+msgid "Remote Control"
+msgstr "Contraròtle a distància"
 
-#: panels/sharing/cc-sharing-panel.ui:352
-msgid "Access Options"
-msgstr "Opcions d'accès"
+#: panels/sharing/cc-sharing-panel.ui:281
+msgid "Allows remote connections to control the screen."
+msgstr "Autorizar los connectats a distància a contrarotlar l’ecran"
 
-#: panels/sharing/cc-sharing-panel.ui:364
-msgid "_New connections must ask for access"
-msgstr "Las _novèlas connexions devon èsser explicitament validadas"
+#: panels/sharing/cc-sharing-panel.ui:294
+msgid "How to Connect"
+msgstr "Cossí se connectar"
 
-#: panels/sharing/cc-sharing-panel.ui:375
-msgid "_Require a password"
-msgstr "_Demandar lo senhal"
+#: panels/sharing/cc-sharing-panel.ui:295
+msgid ""
+"Connect to this computer using the device name or remote desktop address."
+msgstr ""
+"Connectatz-vos a aqueste ordenador en utilizant lo nom d’aparelh  o l’adreça "
+"de burèu a distància."
 
-#: panels/sharing/cc-sharing-panel.ui:400
+#: panels/sharing/cc-sharing-panel.ui:323
+msgid "Remote Desktop Address"
+msgstr "Adreça burèu distant"
+
+#: panels/sharing/cc-sharing-panel.ui:350
+msgid "Authentication"
+msgstr "Autentificacion"
+
+#: panels/sharing/cc-sharing-panel.ui:351
+msgid "The user name and password are required to connect to this computer."
+msgstr ""
+"Per se connectar a aqueste ordenador cal un nom d’utilizaire e un senhal."
+
+#: panels/sharing/cc-sharing-panel.ui:355
+msgid "User Name"
+msgstr "Nom d’utilizaire"
+
+#: panels/sharing/cc-sharing-panel.ui:401
+msgid "Verify Encryption"
+msgstr "Verificar lo chiframent"
+
+#: panels/sharing/cc-sharing-panel.ui:430
+msgid "Encryption Fingerprint"
+msgstr "Chiframent per emprentas"
+
+#: panels/sharing/cc-sharing-panel.ui:431
+msgid ""
+"The encryption fingerprint can be seen in connecting clients and should be "
+"identical"
+msgstr ""
+"L'emprunta de chiframent se vei pendent la connexion als clients e deu èsser "
+"identica"
+
+#: panels/sharing/cc-sharing-panel.ui:463
 msgid "Media Sharing"
 msgstr "Partejar los mèdias"
 
-#: panels/sharing/cc-sharing-panel.ui:422
+#: panels/sharing/cc-sharing-panel.ui:485
 msgid "Share music, photos and videos over the network."
 msgstr "Partejar de la musica, de fòtos e de vidèos sus la ret."
 
-#: panels/sharing/cc-sharing-panel.ui:435
+#: panels/sharing/cc-sharing-panel.ui:498
 msgid "Folders"
 msgstr "Dorsièrs"
 
@@ -6084,7 +6070,7 @@ msgstr "Avant"
 #: panels/sound/cc-output-test-dialog.c:134
 #, c-format
 msgid "Testing %s"
-msgstr "Tèst de %s"
+msgstr "Pròva de %s"
 
 #: panels/sound/cc-output-test-dialog.ui:131
 msgid "Click a speaker to test"
@@ -6108,7 +6094,7 @@ msgstr "Periferic de sortida"
 
 #: panels/sound/cc-sound-panel.ui:75
 msgid "Test"
-msgstr "Tèst"
+msgstr "Provar"
 
 #: panels/sound/cc-sound-panel.ui:104 panels/sound/cc-sound-panel.ui:263
 msgid "Configuration"
@@ -6312,16 +6298,12 @@ msgid "Error switching direct mode: %s"
 msgstr "Error de bascula en mòde dirècte : %s"
 
 #: panels/thunderbolt/cc-bolt-panel.ui:103
-#, fuzzy
-#| msgid "No Thunderbolt support"
 msgid "No Thunderbolt Support"
 msgstr "Pas cap de presa en carga de Thunderbolt"
 
 #: panels/thunderbolt/cc-bolt-panel.ui:104
-#, fuzzy
-#| msgid "Couldn’t connect to the %s domain: %s"
 msgid "Could not connect to the thunderbolt subsystem."
-msgstr "Connexion al domeni %s impossible : %s"
+msgstr "Connexion impossibla al subsistèma Thunderbold."
 
 #: panels/thunderbolt/cc-bolt-panel.ui:153
 msgid "Direct Access"
@@ -6879,20 +6861,16 @@ msgstr "Facilitar la vision, l'escota, la picada, la seleccion e lo clic"
 
 #. Translators: Search terms to find the Accessibility panel. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: panels/universal-access/gnome-universal-access-panel.desktop.in.in:19
-#, fuzzy
-#| msgid ""
-#| "Keyboard;Mouse;a11y;Accessibility;Universal Access;Contrast;Cursor;Sound;"
-#| "Zoom;Screen;Reader;big;high;large;text;font;size;AccessX;Sticky;Keys;Slow;"
-#| "Bounce;Mouse;Double;click;Delay;Speed;Assist;Repeat;Blink;visual;hearing;"
-#| "audio;typing;"
 msgid ""
 "Keyboard;Mouse;a11y;Accessibility;Universal Access;Contrast;Cursor;Sound;"
 "Zoom;Screen;Reader;big;high;large;text;font;size;AccessX;Sticky;Keys;Slow;"
 "Bounce;Mouse;Double;click;Delay;Speed;Assist;Repeat;Blink;visual;hearing;"
 "audio;typing;animations;"
 msgstr ""
-"Clavièr;mirga;ligam;accessibilitat;universal;contrast;cursor;son;zoom;ecran;"
-"lector;grand;larg;tèxt;talha;clic;velocitat;àudio;picada;"
+"Clavièr;mirga;ligam;accessibilitat;universal;contrast;contraste;cursor;son;"
+"zoom;ecran;lector;grand;larg;tèxt;talha;clic;velocitat;àudio;picada;poliça;"
+"policia;escritura;tòca;acorchi;lent;mirga;doble;clic;relambi;delai;repetir;"
+"visual;animacions;"
 
 #. Translators: Option for "Automatically Delete Period" in "Trash & Temporary Files" group
 #: panels/usage/cc-usage-panel.c:55
@@ -7029,8 +7007,6 @@ msgid "_Clear History…"
 msgstr "_Escafar l’istoric…"
 
 #: panels/usage/cc-usage-panel.ui:63
-#, fuzzy
-#| msgid "Trash & Temporary Files"
 msgid "Trash &amp; Temporary Files"
 msgstr "Escobilhièr e fichièrs temporaris"
 
@@ -7133,22 +7109,17 @@ msgid "Administrator"
 msgstr "Administrator"
 
 #: panels/user-accounts/cc-add-user-dialog.ui:132
-#, fuzzy
-#| msgid ""
-#| "Administrators can add and remove other users, and can change settings "
-#| "for all users."
 msgid ""
 "Administrators can add and remove other users, and can change settings for "
 "all users. Parental controls cannot be applied to administrators."
 msgstr ""
 "Los administrator pòdon apondre o suprimir d’autres utilizaires e pòdon "
-"modificar los paramètres de totes los utilizaires."
+"modificar los paramètres de totes los utilizaires. Lo contraròtle parental "
+"se pòt pas aplicar als administrators."
 
 #: panels/user-accounts/cc-add-user-dialog.ui:149
-#, fuzzy
-#| msgid "Allow user to change their password on next login"
 msgid "User sets password on first login"
-msgstr "Autoriser l’utilizaire a changer son senhal a la prochaine connexion"
+msgstr "L’utilizaire definís son senhal a la primièra connexion"
 
 #: panels/user-accounts/cc-add-user-dialog.ui:161
 msgid "Set password now"
@@ -7159,14 +7130,13 @@ msgid "Confirm"
 msgstr "Confirmar"
 
 #: panels/user-accounts/cc-add-user-dialog.ui:278
-#, fuzzy
-#| msgid "_Enterprise Login"
 msgid "Enterprise Login"
-msgstr "Identificant d'e_ntrepresa"
+msgstr "Identificant d'entrepresa"
 
 #: panels/user-accounts/cc-add-user-dialog.ui:279
 msgid "User accounts which are managed by a company or organisation."
 msgstr ""
+"Los comptes utilizaire que son gerits per una entrepresa o una organizacion."
 
 #: panels/user-accounts/cc-add-user-dialog.ui:385
 msgid "You are Offline"
@@ -7182,7 +7152,7 @@ msgstr ""
 "a partir d'aqueste periferic. Permet tanben d’accedir als diferents sites de "
 "la companhiá presents sus Internet."
 
-#: panels/user-accounts/cc-avatar-chooser.c:162
+#: panels/user-accounts/cc-avatar-chooser.c:164
 msgid "Browse for more pictures"
 msgstr "Recercar d'autres imatges"
 
@@ -7194,19 +7164,19 @@ msgstr "Seleccionar un fichièr…"
 msgid "Fingerprint Manager"
 msgstr "Gestionari de detadas"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:18
+#: panels/user-accounts/cc-fingerprint-dialog.ui:20
 msgid "Fingerprint"
 msgstr "Emprentas"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:86
+#: panels/user-accounts/cc-fingerprint-dialog.ui:88
 msgid "_No"
 msgstr "_Non"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:94
+#: panels/user-accounts/cc-fingerprint-dialog.ui:96
 msgid "_Yes"
 msgstr "_Òc"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:114
+#: panels/user-accounts/cc-fingerprint-dialog.ui:116
 msgid ""
 "Do you want to delete your registered fingerprints so fingerprint login is "
 "disabled?"
@@ -7214,28 +7184,28 @@ msgstr ""
 "Volètz suprimir las emprentas digitalas enregistradas e desactivar atal "
 "aqueste tipe de connexion ?"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:170
+#: panels/user-accounts/cc-fingerprint-dialog.ui:172
 msgid "No fingerprint device"
 msgstr "Cap de periferic d’emprenta"
 
 #. Translators: This is the empty state page label which states that there are no devices ready.
-#: panels/user-accounts/cc-fingerprint-dialog.ui:185
+#: panels/user-accounts/cc-fingerprint-dialog.ui:187
 msgid "No Fingerprint device"
 msgstr "Cap de periferics d’emprenta"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:194
+#: panels/user-accounts/cc-fingerprint-dialog.ui:196
 msgid "Ensure the device is properly connected."
 msgstr "Asseguratz-vos que lo periferic es connectat coma cal."
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:202
+#: panels/user-accounts/cc-fingerprint-dialog.ui:204
 msgid "Fingerprint Device"
 msgstr "Lector d’emprentas"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:211
+#: panels/user-accounts/cc-fingerprint-dialog.ui:213
 msgid "Choose the fingerprint device you want to configure"
 msgstr "Seleccionar lo lector d'emprentas digitalas que volètz configurar"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:242
+#: panels/user-accounts/cc-fingerprint-dialog.ui:243
 msgid "Fingerprint Login"
 msgstr "Connexion per reconeissença d'emprentas"
 
@@ -7255,125 +7225,121 @@ msgstr "_Suprimir las emprentas"
 msgid "Fingerprint Enroll"
 msgstr "Aprentissatge d’una emprenta"
 
-#: panels/user-accounts/cc-fingerprint-dialog.ui:349
-msgid "_Re-enroll this finger…"
-msgstr "_Renovar l’inscripcion d’aqueste det…"
-
-#: panels/user-accounts/cc-fingerprint-dialog.c:236
+#: panels/user-accounts/cc-fingerprint-dialog.c:235
 msgid "the device needs to be claimed to perform this action"
 msgstr "aqueste aparelh deu èsser declarat per realizar aquesta accion"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:238
+#: panels/user-accounts/cc-fingerprint-dialog.c:237
 msgid "the device is already claimed by another process"
 msgstr "aqueste aparelh es ja declarat per un autre processús"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:240
+#: panels/user-accounts/cc-fingerprint-dialog.c:239
 msgid "you do not have permission to perform the action"
 msgstr "avètz pas la permission de realizar l’accion"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:242
+#: panels/user-accounts/cc-fingerprint-dialog.c:241
 msgid "no prints have been enrolled"
 msgstr "cap d’inscripcion marcada"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:251
+#: panels/user-accounts/cc-fingerprint-dialog.c:250
 msgid "Failed to communicate with the device during enrollment"
 msgstr "Fracàs de la comunicacion amb l’aparelh pendent l’inscripcion"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:255
+#: panels/user-accounts/cc-fingerprint-dialog.c:254
 msgid "Failed to communicate with the fingerprint reader"
 msgstr "Fracàs de la comunicacion amb lo lector d'emprentas digitalas"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:257
+#: panels/user-accounts/cc-fingerprint-dialog.c:256
 msgid "Failed to communicate with the fingerprint daemon"
 msgstr "Fracàs de la comunicacion amb lo daemon d'emprentas digitalas"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:606
+#: panels/user-accounts/cc-fingerprint-dialog.c:539
 #, c-format
 msgid "Failed to list fingerprints: %s"
 msgstr "Fracàs del cargament de la lista d’emprentas : %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:673
+#: panels/user-accounts/cc-fingerprint-dialog.c:606
 #, c-format
 msgid "Failed to delete saved fingerprints: %s"
 msgstr "Fracàs de la supression de las emprentas enregistradas : %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:704
+#: panels/user-accounts/cc-fingerprint-dialog.c:637
 msgid "Left thumb"
 msgstr "Poce esquèrre"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:706
+#: panels/user-accounts/cc-fingerprint-dialog.c:639
 msgid "Left middle finger"
 msgstr "Major esquèrre"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:708
+#: panels/user-accounts/cc-fingerprint-dialog.c:641
 msgid "_Left index finger"
 msgstr "Indèx _esquèrra"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:710
+#: panels/user-accounts/cc-fingerprint-dialog.c:643
 msgid "Left ring finger"
 msgstr "Anular esquèrre"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:712
+#: panels/user-accounts/cc-fingerprint-dialog.c:645
 msgid "Left little finger"
 msgstr "Auricular esquèrre"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:714
+#: panels/user-accounts/cc-fingerprint-dialog.c:647
 msgid "Right thumb"
 msgstr "Poce dreit"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:716
+#: panels/user-accounts/cc-fingerprint-dialog.c:649
 msgid "Right middle finger"
 msgstr "Major dreit"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:718
+#: panels/user-accounts/cc-fingerprint-dialog.c:651
 msgid "_Right index finger"
 msgstr "Indèx _dreit"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:720
+#: panels/user-accounts/cc-fingerprint-dialog.c:653
 msgid "Right ring finger"
 msgstr "Anular dreit"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:722
+#: panels/user-accounts/cc-fingerprint-dialog.c:655
 msgid "Right little finger"
 msgstr "Auricular dreit"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:724
+#: panels/user-accounts/cc-fingerprint-dialog.c:657
 msgid "Unknown Finger"
 msgstr "Det desconegut"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:858
+#: panels/user-accounts/cc-fingerprint-dialog.c:791
 msgctxt "Fingerprint enroll state"
 msgid "Complete"
 msgstr "Acabat"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:869
+#: panels/user-accounts/cc-fingerprint-dialog.c:802
 msgid "Fingerprint device disconnected"
 msgstr "Lector d’emprentas desconnectat"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:875
+#: panels/user-accounts/cc-fingerprint-dialog.c:808
 msgid "Fingerprint device storage is full"
 msgstr "L’espaci d’emmagazinatge del lector d'emprentas digitalas es plen"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:879
+#: panels/user-accounts/cc-fingerprint-dialog.c:812
 msgid "Failed to enroll new fingerprint"
 msgstr "Fracàs de l’aprentissatge de l’emprenta novèla"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:910
+#: panels/user-accounts/cc-fingerprint-dialog.c:843
 #, c-format
 msgid "Failed to start enrollment: %s"
 msgstr "L’aprentissatge a pas pogut s’aviar : %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:918
+#: panels/user-accounts/cc-fingerprint-dialog.c:851
 msgctxt "Fingerprint enroll state"
 msgid "Failed to enroll new fingerprint"
 msgstr "Fracàs de l’aprentissatge de l’emprenta novèla"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:949
+#: panels/user-accounts/cc-fingerprint-dialog.c:882
 #, c-format
 msgid "Failed to stop enrollment: %s"
 msgstr "Fracàs de l'arrèst de l’inscripcion de l’emprenta digitala : %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:995
+#: panels/user-accounts/cc-fingerprint-dialog.c:928
 msgid ""
 "Repeatedly lift and place your finger on the reader to enroll your "
 "fingerprint"
@@ -7381,29 +7347,33 @@ msgstr ""
 "Plaçatz lo det sul lector d'emprentas digitalas mantun còp per inscriure "
 "vòstra emprenta"
 
+#: panels/user-accounts/cc-fingerprint-dialog.c:1047
+msgid "_Re-enroll this finger…"
+msgstr "_Renovar l’inscripcion d’aqueste det…"
+
 #. TRANSLATORS: This is the label for the button to enroll a new finger
-#: panels/user-accounts/cc-fingerprint-dialog.c:1147
+#: panels/user-accounts/cc-fingerprint-dialog.c:1062
 msgid "Scan new fingerprint"
 msgstr "Enregistrar una emprenta novèla"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1185
+#: panels/user-accounts/cc-fingerprint-dialog.c:1100
 #, c-format
 msgid "Failed to release fingerprint device %s: %s"
 msgstr "Impossible de desliurar lo lector d'emprentas digitalas%s : %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1257
+#: panels/user-accounts/cc-fingerprint-dialog.c:1172
 msgctxt "Fingerprint enroll state"
 msgid "Problem Reading Device"
 msgstr "Problèma pendent la lectura de l’aparelh"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1292
+#: panels/user-accounts/cc-fingerprint-dialog.c:1207
 #, c-format
 msgid "Failed to claim fingerprint device %s: %s"
 msgstr ""
 "Fracàs de la temptativa de revendicacion del lector d'emprentas "
 "digitalas %s: %s"
 
-#: panels/user-accounts/cc-fingerprint-dialog.c:1441
+#: panels/user-accounts/cc-fingerprint-dialog.c:1358
 #, c-format
 msgid "Failed to get fingerprint devices: %s"
 msgstr ""
@@ -7432,7 +7402,7 @@ msgstr "%b %e"
 #: panels/user-accounts/cc-login-history-dialog.c:93
 msgctxt "login history week label"
 msgid "%b %e, %Y"
-msgstr "%b %e, %Y"
+msgstr "%e %B de %Y"
 
 #. Translators: This indicates a week label on a login history.
 #. The first %s is the first day of a week, and the second %s the last day.
@@ -7445,7 +7415,7 @@ msgstr "%s — %s"
 #. Translators: This is a time format string in the style of "22:58".
 #. It indicates a login time which follows a date.
 #: panels/user-accounts/cc-login-history-dialog.c:179
-#: panels/user-accounts/cc-user-panel.c:688
+#: panels/user-accounts/cc-user-panel.c:712
 msgctxt "login date-time"
 msgid "%k:%M"
 msgstr "%k:%M"
@@ -7453,7 +7423,7 @@ msgstr "%k:%M"
 #. Translators: This indicates a login date-time.
 #. The first %s is a date, and the second %s a time.
 #: panels/user-accounts/cc-login-history-dialog.c:182
-#: panels/user-accounts/cc-user-panel.c:692
+#: panels/user-accounts/cc-user-panel.c:716
 #, c-format
 msgctxt "login date-time"
 msgid "%s, %s"
@@ -7537,26 +7507,26 @@ msgstr "Senhal invalid, ensajatz tornamai"
 msgid "Couldn’t connect to the %s domain: %s"
 msgstr "Connexion al domeni %s impossible : %s"
 
-#: panels/user-accounts/cc-user-panel.c:317
+#: panels/user-accounts/cc-user-panel.c:341
 msgid "Failed to delete user"
 msgstr "La supression de l'utilizaire a fracassat"
 
-#: panels/user-accounts/cc-user-panel.c:374
-#: panels/user-accounts/cc-user-panel.c:429
-#: panels/user-accounts/cc-user-panel.c:475
+#: panels/user-accounts/cc-user-panel.c:398
+#: panels/user-accounts/cc-user-panel.c:453
+#: panels/user-accounts/cc-user-panel.c:499
 msgid "Failed to revoke remotely managed user"
 msgstr "La revocacion de l'utilizaire gerit a distància a fracassat"
 
-#: panels/user-accounts/cc-user-panel.c:524
+#: panels/user-accounts/cc-user-panel.c:548
 msgid "You cannot delete your own account."
 msgstr "Podètz pas suprimir vòstre pròpri compte."
 
-#: panels/user-accounts/cc-user-panel.c:533
+#: panels/user-accounts/cc-user-panel.c:557
 #, c-format
 msgid "%s is still logged in"
 msgstr "%s es encara connectat"
 
-#: panels/user-accounts/cc-user-panel.c:537
+#: panels/user-accounts/cc-user-panel.c:561
 msgid ""
 "Deleting a user while they are logged in can leave the system in an "
 "inconsistent state."
@@ -7564,12 +7534,12 @@ msgstr ""
 "Suprimir un utilizaire mentre qu'es connectat pòt daissar lo sistèma dins un "
 "estat instable."
 
-#: panels/user-accounts/cc-user-panel.c:546
+#: panels/user-accounts/cc-user-panel.c:570
 #, c-format
 msgid "Do you want to keep %s’s files?"
 msgstr "Volètz conservar los fichièrs de %s ?"
 
-#: panels/user-accounts/cc-user-panel.c:550
+#: panels/user-accounts/cc-user-panel.c:574
 msgid ""
 "It is possible to keep the home directory, mail spool and temporary files "
 "around when deleting a user account."
@@ -7578,67 +7548,67 @@ msgstr ""
 "espèra (lo « spool ») e los fichièrs temporaris d'un compte d'utilizaire al "
 "moment de sa supression."
 
-#: panels/user-accounts/cc-user-panel.c:553
+#: panels/user-accounts/cc-user-panel.c:577
 msgid "_Delete Files"
 msgstr "_Suprimir los fichièrs"
 
-#: panels/user-accounts/cc-user-panel.c:554
+#: panels/user-accounts/cc-user-panel.c:578
 msgid "_Keep Files"
 msgstr "_Conservar los fichièrs"
 
-#: panels/user-accounts/cc-user-panel.c:568
+#: panels/user-accounts/cc-user-panel.c:592
 #, c-format
 msgid "Are you sure you want to revoke remotely managed %s’s account?"
 msgstr "Sètz segur que volètz revocar lo compte distant de %s ?"
 
-#: panels/user-accounts/cc-user-panel.c:572
+#: panels/user-accounts/cc-user-panel.c:596
 msgid "_Delete"
 msgstr "_Suprimir"
 
-#: panels/user-accounts/cc-user-panel.c:622
+#: panels/user-accounts/cc-user-panel.c:646
 msgctxt "Password mode"
 msgid "Account disabled"
 msgstr "Compte desactivat"
 
-#: panels/user-accounts/cc-user-panel.c:630
+#: panels/user-accounts/cc-user-panel.c:654
 msgctxt "Password mode"
 msgid "To be set at next login"
 msgstr "De definir al moment de la connexion que ven"
 
-#: panels/user-accounts/cc-user-panel.c:633
+#: panels/user-accounts/cc-user-panel.c:657
 msgctxt "Password mode"
 msgid "None"
 msgstr "Pas cap"
 
-#: panels/user-accounts/cc-user-panel.c:676
+#: panels/user-accounts/cc-user-panel.c:700
 msgid "Logged in"
 msgstr "Connectat"
 
 #. TRANSLATORS: Status of Parental Controls setup
-#: panels/user-accounts/cc-user-panel.c:763
-#: panels/user-accounts/cc-user-panel.c:867
+#: panels/user-accounts/cc-user-panel.c:787
+#: panels/user-accounts/cc-user-panel.c:876
 #: panels/wwan/cc-wwan-device-page.c:476
 msgid "Enabled"
 msgstr "Activat"
 
-#: panels/user-accounts/cc-user-panel.c:1187
+#: panels/user-accounts/cc-user-panel.c:1173
 msgid "Failed to contact the accounts service"
 msgstr "La connexion al servici dels comptes a fracassat"
 
-#: panels/user-accounts/cc-user-panel.c:1189
+#: panels/user-accounts/cc-user-panel.c:1175
 msgid "Please make sure that the AccountService is installed and enabled."
 msgstr "Verificatz qu'AccountService es installat e activat."
 
-#: panels/user-accounts/cc-user-panel.c:1210
+#: panels/user-accounts/cc-user-panel.c:1197
 msgid "This panel must be unlocked to change this setting"
-msgstr ""
+msgstr "Devètz desverrolhar aqueste panèl per modificar aqueste paramètre"
 
-#: panels/user-accounts/cc-user-panel.c:1277
+#: panels/user-accounts/cc-user-panel.c:1264
 msgid "Delete the selected user account"
 msgstr "Suprimir lo compte d'utilizaire seleccionat"
 
-#: panels/user-accounts/cc-user-panel.c:1281
-#: panels/user-accounts/cc-user-panel.c:1390
+#: panels/user-accounts/cc-user-panel.c:1268
+#: panels/user-accounts/cc-user-panel.c:1377
 msgid ""
 "To delete the selected user account,\n"
 "click the * icon first"
@@ -7646,7 +7616,7 @@ msgstr ""
 "Per suprimir lo compte d'utilizaire seleccionat,\n"
 "clicatz primièr sus l'icòna *"
 
-#: panels/user-accounts/cc-user-panel.c:1432
+#: panels/user-accounts/cc-user-panel.c:1423
 msgid "Unlock to Add Users and Change Settings"
 msgstr "Desverrolhar per apondre d'utilizaires e modificar los paramètres"
 
@@ -7664,23 +7634,23 @@ msgid "Restart Now"
 msgstr "Reaviar ara"
 
 #. FIXME
-#: panels/user-accounts/cc-user-panel.ui:188
+#: panels/user-accounts/cc-user-panel.ui:195
 msgid "_Fingerprint Login"
 msgstr "Connexion per _reconeissença d'emprentas"
 
-#: panels/user-accounts/cc-user-panel.ui:211
+#: panels/user-accounts/cc-user-panel.ui:218
 msgid "A_utomatic Login"
 msgstr "Connexion a_utomatica"
 
-#: panels/user-accounts/cc-user-panel.ui:224
+#: panels/user-accounts/cc-user-panel.ui:231
 msgid "Account Activity"
 msgstr "Activitat del compte"
 
-#: panels/user-accounts/cc-user-panel.ui:252
+#: panels/user-accounts/cc-user-panel.ui:259
 msgid "_Administrator"
 msgstr "_Administrator"
 
-#: panels/user-accounts/cc-user-panel.ui:253
+#: panels/user-accounts/cc-user-panel.ui:260
 msgid ""
 "Administrators can add and remove other users, and can change settings for "
 "all users."
@@ -7688,34 +7658,32 @@ msgstr ""
 "Los administrator pòdon apondre o suprimir d’autres utilizaires e pòdon "
 "modificar los paramètres de totes los utilizaires."
 
-#: panels/user-accounts/cc-user-panel.ui:269
+#: panels/user-accounts/cc-user-panel.ui:276
 msgid "_Parental Controls"
 msgstr "Contròle _parental"
 
-#: panels/user-accounts/cc-user-panel.ui:270
+#: panels/user-accounts/cc-user-panel.ui:277
 msgid "Open the Parental Controls application."
 msgstr "Dobrir l'aplicacion de Contraròtle parental."
 
-#: panels/user-accounts/cc-user-panel.ui:321
+#: panels/user-accounts/cc-user-panel.ui:328
 msgid "Remove User…"
 msgstr "Suprimir l’utilizaire…"
 
-#: panels/user-accounts/cc-user-panel.ui:333
-#, fuzzy
-#| msgid "Other Files"
+#: panels/user-accounts/cc-user-panel.ui:340
 msgid "Other Users"
-msgstr "Autres fichièrs"
+msgstr "Autres utilizaires"
 
-#: panels/user-accounts/cc-user-panel.ui:346
+#: panels/user-accounts/cc-user-panel.ui:353
 msgid "Add User…"
 msgstr "Apondre un utilizaire…"
 
 #. Translators: This is the empty state page label which states that there are no users to show in the panel.
-#: panels/user-accounts/cc-user-panel.ui:374
+#: panels/user-accounts/cc-user-panel.ui:381
 msgid "No Users Found"
 msgstr "Cap d'utilizaire pas trobat"
 
-#: panels/user-accounts/cc-user-panel.ui:383
+#: panels/user-accounts/cc-user-panel.ui:390
 msgid "Unlock to add a user account."
 msgstr "Desverrolhatz per crear un compte d'utilizaire."
 
@@ -7999,67 +7967,63 @@ msgstr "Afichar l'ajuda a l'ecran"
 
 #: panels/wacom/cc-wacom-device.c:431
 msgid "Tablet mounted on laptop panel"
-msgstr ""
+msgstr "Tauleta montada sul portatil"
 
 #: panels/wacom/cc-wacom-device.c:433
 msgid "Tablet mounted on external display"
-msgstr ""
+msgstr "Tauleta montada per un monitor extèrn"
 
 #: panels/wacom/cc-wacom-device.c:435
-#, fuzzy
-#| msgid "Create virtual device"
 msgid "External tablet device"
-msgstr "Crear un periferic virtual"
+msgstr "Aparelh tauleta extèrna"
 
 #. All displays item
 #: panels/wacom/cc-wacom-page.c:608
-#, fuzzy
-#| msgid "Displays"
 msgid "All Displays"
-msgstr "Ec­rans"
+msgstr "Totes los ecrans"
 
 #: panels/wacom/cc-wacom-page.ui:16
-#, fuzzy
-#| msgid "Tablet"
 msgid "Tablet Mode"
-msgstr "Tauleta"
+msgstr "Mòde tauleta"
 
 #: panels/wacom/cc-wacom-page.ui:17
 msgid "Use absolute positioning for the pen"
-msgstr ""
+msgstr "Utilizar lo posicionament absolut per l'estilò"
 
 #: panels/wacom/cc-wacom-page.ui:27
-#, fuzzy
-#| msgid "Left-Handed Orientation"
 msgid "Left Hand Orientation"
 msgstr "Orientacion per esquerrièr"
 
 #: panels/wacom/cc-wacom-page.ui:28
 msgid "Tablet and Express Keys™ are rotated for left hand use"
-msgstr ""
+msgstr "La tauleta e Express Keys™ son viradas per l’usatge de la man esquèrra"
 
 #: panels/wacom/cc-wacom-page.ui:56
-#, fuzzy
-#| msgid "Map to Monitor…"
 msgctxt "display setting"
 msgid "Map to Monitor"
-msgstr "Associar a l'ecran…"
+msgstr "Associar al monitor"
 
 #: panels/wacom/cc-wacom-page.ui:62
-#, fuzzy
-#| msgid "Aspect Ratio"
 msgid "Keep Aspect Ratio"
-msgstr "Proporcion"
+msgstr "Conservar las proporcions"
 
 #: panels/wacom/cc-wacom-page.ui:63
 msgid "Only use a portion of the tablet surface to keep monitor aspect ratio"
 msgstr ""
+"Utilizar sonque un airal reduch de la susfàcia de la tauleta per gardar la "
+"proporcion del monitor"
 
 #: panels/wacom/cc-wacom-page.ui:73
-#, fuzzy
-#| msgid "Calibrate…"
 msgid "Calibrate"
-msgstr "Escandalhar…"
+msgstr "Calibrar"
+
+#: panels/wacom/cc-wacom-panel.ui:56
+msgid "No tablet detected"
+msgstr "Cap de tauleta  pas detectada"
+
+#: panels/wacom/cc-wacom-panel.ui:57
+msgid "Please plug in or turn on your Wacom tablet."
+msgstr "Connectatz o alucatz vòstra tauleta Wacom."
 
 #: panels/wacom/cc-wacom-stylus-page.ui:16
 msgid "Tip Pressure Feel"
@@ -8086,19 +8050,19 @@ msgstr "Pression ressentida sus la goma"
 
 #: panels/wacom/cc-wacom-tool.c:321
 msgid "Airbrush stylus with pressure, tilt, and integrated slider"
-msgstr ""
+msgstr "Estilò aerograf amb pression, enclinason, e barra de desfilament"
 
 #: panels/wacom/cc-wacom-tool.c:323
 msgid "Airbrush stylus with pressure, tilt, and rotation"
-msgstr ""
+msgstr "Estilò aerograf amb pression, enclinason, e rotacion"
 
 #: panels/wacom/cc-wacom-tool.c:325
 msgid "Standard stylus with pressure and tilt"
-msgstr ""
+msgstr "Estilò aerograf amb pression e enclinason"
 
 #: panels/wacom/cc-wacom-tool.c:327
 msgid "Standard stylus with pressure"
-msgstr ""
+msgstr "Estilò aerograf amb pression"
 
 #: panels/wacom/gnome-wacom-panel.desktop.in.in:3
 msgid "Wacom Tablet"
@@ -8734,6 +8698,40 @@ msgstr[1] "%u entradas"
 msgid "System Sounds"
 msgstr "Sons sistèma"
 
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid "Authenticate"
+#~ msgstr "Autentificacion"
+
+#~ msgid ""
+#~ "Screen sharing allows remote users to view or control your screen by "
+#~ "connecting to %s"
+#~ msgstr ""
+#~ "Lo partiment d’ecran permet als utilizaires distants de veire o "
+#~ "contrarotlar vòstre ecran en se connectant a %s"
+
+#~ msgid "_Screen Sharing"
+#~ msgstr "Partiment _de l'ecran"
+
+#~ msgid "Screen Sharing"
+#~ msgstr "Partiment de l'ecran"
+
+#~ msgid "_Password:"
+#~ msgstr "Se_nhal :"
+
+#~ msgid "_Show Password"
+#~ msgstr "_Afichar lo senhal"
+
+#~ msgid "Access Options"
+#~ msgstr "Opcions d'accès"
+
+#~ msgid "_New connections must ask for access"
+#~ msgstr "Las _novèlas connexions devon èsser explicitament validadas"
+
+#~ msgid "_Require a password"
+#~ msgstr "_Demandar lo senhal"
+
 #~ msgid "Web Links"
 #~ msgstr "Ligams Web"
 
@@ -9022,12 +9020,6 @@ msgstr "Sons sistèma"
 
 #~ msgid "_Help"
 #~ msgstr "_Ajuda"
-
-#~ msgid "No tablet detected"
-#~ msgstr "Cap de tauleta  pas detectada"
-
-#~ msgid "Please plug in or turn on your Wacom tablet"
-#~ msgstr "Connectatz o alucatz vòstra tauleta  Wacom"
 
 #~ msgid "Bluetooth Settings"
 #~ msgstr "Paramètres del Bluetooth"
@@ -10300,9 +10292,6 @@ msgstr "Sons sistèma"
 #~ msgid "Personal File Sharing"
 #~ msgstr "Partiment de fichièrs personals"
 
-#~ msgid "_Allow Remote Control"
-#~ msgstr "_Autorizar lo contròle a distància"
-
 #~ msgid ""
 #~ "Media sharing allows you to share music, photos and videos over the "
 #~ "network."
@@ -10729,9 +10718,6 @@ msgstr "Sons sistèma"
 
 #~ msgid "Share Public Folder On This Network"
 #~ msgstr "Partejar lo Dorsièr public sus aquesta ret"
-
-#~ msgid "Remote View"
-#~ msgstr "Afichatge distant"
 
 #~ msgid "Approve All Connections"
 #~ msgstr "Autorizar totas las connexions"

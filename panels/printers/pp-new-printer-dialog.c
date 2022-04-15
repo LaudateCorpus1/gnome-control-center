@@ -1662,9 +1662,6 @@ ppd_selection_cb (GtkDialog *_dialog,
       ppd_name = pp_ppd_selection_dialog_get_ppd_name (self->ppd_selection_dialog);
       ppd_display_name = pp_ppd_selection_dialog_get_ppd_display_name (self->ppd_selection_dialog);
   }
-  else {
-      self->user_callback (GTK_DIALOG (self), GTK_RESPONSE_CANCEL, self->user_data);
-  }
 
   if (ppd_name)
     {
@@ -1703,7 +1700,10 @@ ppd_selection_cb (GtkDialog *_dialog,
         }
     }
 
-  self->user_callback (GTK_DIALOG (self), GTK_RESPONSE_OK, self->user_data);
+  /* This is needed here since parent dialog is destroyed first. */
+  gtk_window_set_transient_for (GTK_WINDOW (self->ppd_selection_dialog), NULL);
+
+  self->user_callback (GTK_DIALOG (self), response_id, self->user_data);
 }
 
 static void
@@ -1823,6 +1823,12 @@ pp_new_printer_dialog_dispose (GObject *object)
   g_clear_object (&self->lpd_host);
   g_clear_object (&self->remote_cups_host);
   g_clear_object (&self->samba_host);
+
+  if (self->ppd_selection_dialog != NULL)
+    {
+      gtk_window_destroy (GTK_WINDOW (self->ppd_selection_dialog));
+      self->ppd_selection_dialog = NULL;
+    }
 
   if (self->num_of_dests > 0)
     {
